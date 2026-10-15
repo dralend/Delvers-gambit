@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ck1o67lli6x8n"]
+
+[ext_resource type="Texture2D" uid="uid://bm54tpn41ujmn" path="res://GameManager/Map/rooms/Item/Armor/Item__58.png" id="1_cywsk"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_mi5v6"]
+
+[resource]
+script = ExtResource("1_mi5v6")
+item_id = "Guardian_Plate"
+item_name = "Guardian Plate"
+description = "Protects your strongest card from being captured."
+icon = ExtResource("1_cywsk")
+item_type = 1
+metadata/_custom_type_script = "uid://l53eav67i1ml"

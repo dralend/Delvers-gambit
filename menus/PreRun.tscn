@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://buscg4frr4nwe"]
+
+[ext_resource type="Script" uid="uid://boug2thc4qihq" path="res://menus/pre_run.gd" id="1_37c4l"]
+
+[node name="PreRun" type="Control" unique_id=1883680548]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37c4l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1633337607]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1566666249]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1335835853]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=725608701]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1451961706]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "CHOOSE RUN LENGTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1200251739]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Choose how long you want your adventure to be."
+
+[node name="TutorialButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=26513816]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tutorial"
+
+[node name="EasyButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1065621846]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "EASY"
+
+[node name="NormalButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=545262397]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "NORMAL"
+
+[node name="HardButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=747384267]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "HARD"
+
+[node name="RunInfoLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=518295895]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Select a difficulty."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=2109530494]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "START RUN"
+
+[node name="BackButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1749512764]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/NormalButton" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

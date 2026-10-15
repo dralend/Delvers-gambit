@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dxcuh7hexf1dv"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_eim3w"]
+[ext_resource type="Texture2D" uid="uid://dd5gns0ag6bad" path="res://GameManager/Card/Type/outsider/art/Fiend.png" id="1_ra7mj"]
+
+[resource]
+script = ExtResource("1_eim3w")
+card_name = "Fiend"
+artwork = ExtResource("1_ra7mj")
+up = 6
+right = 6
+down = 6
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

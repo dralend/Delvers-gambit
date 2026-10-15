@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://pwkhvwft78qe"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_3lqer"]
+[ext_resource type="Texture2D" uid="uid://dkf6c71bggx0y" path="res://GameManager/Card/Type/vermin/art/Rats.png" id="1_wunrk"]
+
+[resource]
+script = ExtResource("1_3lqer")
+card_name = "Rats"
+artwork = ExtResource("1_wunrk")
+up = 3
+right = 4
+down = 2
+left = 4
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

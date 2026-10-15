@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ctkvixl56g85v"]
+
+[ext_resource type="Script" uid="uid://b6vmk4uc62832" path="res://GameManager/Map/rooms/BonusCache/bonus_cache_room.gd" id="1_t5o6j"]
+
+[node name="BonusCacheRoom" type="Control" unique_id=1219379067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5o6j")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2130931982]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.38170326, 0.38170323, 0.38170323, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=482800769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1354573936]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=215662469]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "BONUS CACHE"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2087662758]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "You discovered a hidden cache!
+Choose one reward."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Choices" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1277223242]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="CardChoice" type="Button" parent="MarginContainer/VBoxContainer/Choices" unique_id=1856677680]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+text = "TAKE CARD"
+
+[node name="ItemChoice" type="Button" parent="MarginContainer/VBoxContainer/Choices" unique_id=443368640]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+text = "TAKE ITEM"
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=544084631]
+visible = false
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+text = "CONTINUE"

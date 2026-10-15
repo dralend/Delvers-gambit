@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c5vbdotwkcuu0"]
+
+[ext_resource type="Texture2D" uid="uid://os7uqcs3mjko" path="res://GameManager/Map/rooms/Item/Relics/Item__59.png" id="1_m5qww"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_r1fk8"]
+
+[resource]
+script = ExtResource("1_r1fk8")
+item_id = "Guardian_Relic"
+item_name = "Guardian Relic"
+description = "An ancient relic that provides powerful protection during combat."
+icon = ExtResource("1_m5qww")
+item_type = 1
+effect_value = 2
+metadata/_custom_type_script = "uid://l53eav67i1ml"

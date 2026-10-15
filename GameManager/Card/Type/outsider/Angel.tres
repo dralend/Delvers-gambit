@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bfv57woeiaaww"]
+
+[ext_resource type="Texture2D" uid="uid://bho5ss0kg1gw1" path="res://GameManager/Card/Type/outsider/art/Angel.png" id="1_nps3v"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_qk820"]
+
+[resource]
+script = ExtResource("1_qk820")
+card_name = "Angel"
+artwork = ExtResource("1_nps3v")
+up = 7
+right = 8
+down = 6
+left = 7
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

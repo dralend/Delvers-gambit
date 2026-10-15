@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cc2d0xydaxggd"]
+
+[ext_resource type="Texture2D" uid="uid://btgc0m2thbm12" path="res://GameManager/Map/rooms/Item/Relics/Item__26.png" id="1_37eb7"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_j1jjv"]
+
+[resource]
+script = ExtResource("1_j1jjv")
+item_id = "Phoenix_Relic"
+item_name = "Phoenix Relic"
+description = "The power of the phoenix protects you from defeat."
+icon = ExtResource("1_37eb7")
+is_relic = true
+metadata/_custom_type_script = "uid://l53eav67i1ml"

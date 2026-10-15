@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bvsxmk5vgnn4u"]
+
+[ext_resource type="Script" uid="uid://k8ieecux046v" path="res://GameManager/Map/rooms/Healing/healing_room.gd" id="1_bh08y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ai4c"]
+bg_color = Color(0.8666667, 0, 0, 1)
+
+[node name="HealingRoom" type="Control" unique_id=780607829]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bh08y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1857854093]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1909554369]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=987634842]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=129890552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=306286974]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Healing Shrine"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=206021110]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Rest here and recover some health."
+
+[node name="HealthLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=2135243232]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "HP: 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="CenterContainer/Panel/VBoxContainer" unique_id=1981421396]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxFlat_3ai4c")
+max_value = 4.0
+step = 1.0
+value = 4.0
+
+[node name="HealButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1615397774]
+layout_mode = 2
+text = "Rest"
+
+[node name="LeaveButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1165470175]
+layout_mode = 2
+text = "Leave"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/LeaveButton" to="." method="_on_leave_button_pressed"]

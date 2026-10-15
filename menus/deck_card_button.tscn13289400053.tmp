@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://5gn2li1cm32x"]
+
+[ext_resource type="Script" uid="uid://b7d4fqp2ecnps" path="res://menus/deck_card_button.gd" id="1_es6ju"]
+
+[node name="DeckCardButton" type="Button" unique_id=1987842486]
+custom_minimum_size = Vector2(150, 210)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_es6ju")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=241003903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Artwork" type="TextureRect" parent="VBoxContainer" unique_id=226268329]
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=945523911]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ValuesLabel" type="Label" parent="VBoxContainer" unique_id=1548052258]
+layout_mode = 2
+horizontal_alignment = 1

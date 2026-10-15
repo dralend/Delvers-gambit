@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://2cxly21l70kt"]
+
+[ext_resource type="Script" uid="uid://ciunxvq5t834o" path="res://GameManager/Map/run_map.gd" id="1_spwqw"]
+[ext_resource type="PackedScene" uid="uid://bqbjvkosmwv82" path="res://GameManager/Map/map_room.tscn" id="2_jy7cg"]
+[ext_resource type="Script" uid="uid://dbkya51y72epf" path="res://GameManager/Map/map_connections.gd" id="3_ucaq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spwqw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="RunMap" type="Control" unique_id=486346604]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_spwqw")
+room_scene = ExtResource("2_jy7cg")
+
+[node name="Background" type="ColorRect" parent="." unique_id=636416574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28118682, 0.28118688, 0.28118682, 1)
+
+[node name="MapScroll" type="ScrollContainer" parent="." unique_id=1425883970]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 0
+
+[node name="MapPanel" type="Panel" parent="MapScroll" unique_id=811612376]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_spwqw")
+
+[node name="ConnectionLines" type="Control" parent="MapScroll/MapPanel" unique_id=69455233]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_ucaq4")
+
+[node name="Rooms" type="Control" parent="MapScroll/MapPanel" unique_id=76767292]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1130979502]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RoomInfoLabel" type="Label" parent="." unique_id=1332105677]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RunHUD" type="Control" parent="." unique_id=289270245]
+anchors_preset = 0
+offset_left = 253.0
+offset_top = 832.0
+offset_right = 293.0
+offset_bottom = 872.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RunHUD" unique_id=1613935828]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="RunHUD/VBoxContainer" unique_id=995643207]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="RunHUD/VBoxContainer/HBoxContainer" unique_id=1876869627]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "HEALTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="RunHUD/VBoxContainer/HBoxContainer" unique_id=321306185]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="InventoryButton" type="Button" parent="RunHUD/VBoxContainer" unique_id=2085162867]
+layout_mode = 2
+size_flags_vertical = 4
+text = "INVENTORY"
+
+[connection signal="pressed" from="RunHUD/VBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]

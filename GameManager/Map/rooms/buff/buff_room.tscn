@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bdufa3plkkh6m"]
+
+[ext_resource type="Script" uid="uid://lrfccyfdv45b" path="res://GameManager/Map/rooms/buff/buff_room.gd" id="1_u1bjs"]
+
+[node name="BuffRoom" type="Control" unique_id=1141743362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1bjs")
+
+[node name="Background" type="ColorRect" parent="." unique_id=997053219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.32172796, 0.32172796, 0.32172796, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1023889633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=714252246]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1051586919]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Choose a Blessing"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1114428444]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Choose one temporary buff for this run."
+horizontal_alignment = 1
+
+[node name="BuffChoices" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1591199526]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="SkipButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1836436348]
+layout_mode = 2
+text = "Skip"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SkipButton" to="." method="_on_skip_button_pressed"]

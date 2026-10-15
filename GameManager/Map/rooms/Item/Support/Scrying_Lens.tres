@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d0u7j0dbrvegl"]
+
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_qwkh8"]
+[ext_resource type="Texture2D" uid="uid://c27j70g4ehh4y" path="res://GameManager/Map/rooms/Item/Support/Item__43.png" id="1_t7nb2"]
+
+[resource]
+script = ExtResource("1_qwkh8")
+item_id = "Scrying_Lens"
+item_name = "Scrying Lens"
+description = "Reveals additional information when preparing your battle hand."
+icon = ExtResource("1_t7nb2")
+metadata/_custom_type_script = "uid://l53eav67i1ml"

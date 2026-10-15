@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bcmvyjxh4sa8q"]
+
+[ext_resource type="Script" uid="uid://2drokumfrhwu" path="res://menus/tutorial.gd" id="1_6kkba"]
+
+[node name="Tutorial" type="Control" unique_id=1420402630]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6kkba")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1462143786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.26657522, 0.2665752, 0.2665752, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=323420815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1224201283]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=767341833]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=164550303]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "HOW TO PLAY"
+vertical_alignment = 1
+
+[node name="PageLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1310112961]
+layout_mode = 2
+text = "PAGE 1 / 6"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ContentPanel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=1600797593]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/ContentPanel" unique_id=1179446019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="ContentVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin" unique_id=2027892579]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SectionTitle" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=1549748930]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=2066267666]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[node name="ExampleContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=1797503430]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="TipLabel" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=242978278]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 1
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1330042027]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=749694250]
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+text = "BACK"
+
+[node name="SkipButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=813195391]
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+text = "SKIP TUTORIAL"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1693864452]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1566742592]
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+text = "NEXT"

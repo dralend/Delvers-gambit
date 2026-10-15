@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bghhjbox7umdj"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_3trkf"]
+[ext_resource type="Texture2D" uid="uid://dj5osopoh2hsy" path="res://GameManager/Card/Type/humanoid/art/High Elf.png" id="1_infj2"]
+
+[resource]
+script = ExtResource("1_3trkf")
+card_name = "High Elf"
+artwork = ExtResource("1_infj2")
+up = 6
+right = 4
+down = 4
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

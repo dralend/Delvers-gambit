@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmnro40lw3cq8"]
+
+[ext_resource type="Texture2D" uid="uid://b3r8qevljlyan" path="res://GameManager/Board/board.png" id="1_58lv5"]
+[ext_resource type="Script" uid="uid://binr72a1p1koc" path="res://GameManager/Board/board_slot.gd" id="1_f7dey"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nl4ll"]
+texture = ExtResource("1_58lv5")
+
+[node name="BoardSlot" type="Panel" unique_id=1330985163]
+custom_minimum_size = Vector2(160, 220)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nl4ll")
+script = ExtResource("1_f7dey")

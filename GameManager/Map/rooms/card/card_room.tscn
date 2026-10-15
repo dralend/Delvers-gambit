@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dlkyi8cdk2r28"]
+
+[ext_resource type="Script" uid="uid://dpkcyu44wed6d" path="res://GameManager/Map/rooms/card/card_room.gd" id="1_cklaq"]
+
+[node name="CardRoom" type="Control" unique_id=658594926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cklaq")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2046198837]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+
+[node name="CardChoices" type="HBoxContainer" parent="." unique_id=609046748]
+custom_minimum_size = Vector2(200, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -110.0
+offset_right = 80.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkipButton" type="Button" parent="." unique_id=585307257]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 139.0
+offset_right = 21.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Skip"
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1202124869]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -304.0
+offset_right = 139.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Choose a Card"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=92835592]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -246.0
+offset_right = 269.0
+offset_bottom = -204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Choose one card to add to your deck."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

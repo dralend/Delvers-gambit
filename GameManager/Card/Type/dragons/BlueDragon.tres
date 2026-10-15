@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cfnt3dlowdpge"]
+
+[ext_resource type="Texture2D" uid="uid://c5nyvb3hhuppw" path="res://GameManager/Card/Type/dragons/art/Blue Dragon.png" id="1_evecv"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_ny40v"]
+
+[resource]
+script = ExtResource("1_ny40v")
+card_name = "Blue Dragon"
+artwork = ExtResource("1_evecv")
+up = 8
+right = 5
+down = 5
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

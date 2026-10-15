@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://6152a6b4v3kb"]
+
+[ext_resource type="Texture2D" uid="uid://b5his4d3rav27" path="res://GameManager/Map/rooms/Item/Support/Item__24.png" id="1_2hrro"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_8jv3r"]
+
+[resource]
+script = ExtResource("1_8jv3r")
+item_id = "Tactical_Compass"
+item_name = "Tactical Compass"
+description = "Helps you prepare for dangerous encounters."
+icon = ExtResource("1_2hrro")
+metadata/_custom_type_script = "uid://l53eav67i1ml"

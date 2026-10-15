@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuffData" format=3 uid="uid://bnk1rip68ltke"]
+
+[ext_resource type="Script" uid="uid://dfcreymgldgpq" path="res://GameManager/Map/rooms/buff/buff_data.gd" id="1_5tmgs"]
+
+[resource]
+script = ExtResource("1_5tmgs")
+buff_id = "extra_card_power"
+buff_name = "Power Surge"
+description = "Your cards gain +1 to every side for the next combat."
+metadata/_custom_type_script = "uid://dfcreymgldgpq"

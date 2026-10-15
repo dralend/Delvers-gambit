@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://vam0it57gspn"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_clmkx"]
+[ext_resource type="Texture2D" uid="uid://cjj6sw30jmlp6" path="res://GameManager/Card/Type/vermin/art/insects.png" id="1_yqw3c"]
+
+[resource]
+script = ExtResource("1_clmkx")
+card_name = "Insects"
+artwork = ExtResource("1_yqw3c")
+up = 3
+right = 4
+down = 2
+left = 4
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://yo124g00mvvq"]
+
+[ext_resource type="Texture2D" uid="uid://dvs5iqmnwgtec" path="res://GameManager/Map/rooms/Item/Armor/Item__57.png" id="1_a8isq"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_mw2ma"]
+
+[resource]
+script = ExtResource("1_mw2ma")
+item_id = "Chainmail"
+item_name = "Chainmail"
+description = "Your cards become harder to defeat when defending."
+icon = ExtResource("1_a8isq")
+item_type = 1
+metadata/_custom_type_script = "uid://l53eav67i1ml"

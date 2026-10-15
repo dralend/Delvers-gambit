@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cvorxmc8wjthd"]
+
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_30xg7"]
+[ext_resource type="Texture2D" uid="uid://bp3538crwaefe" path="res://GameManager/Map/rooms/Item/Weapons/Item__02.png" id="1_xmqqb"]
+
+[resource]
+script = ExtResource("1_30xg7")
+item_id = "Twin_Blades"
+item_name = "Twin Blades"
+description = "Gain a second chance to capture an enemy when your first attack fails."
+icon = ExtResource("1_xmqqb")
+item_type = 0
+metadata/_custom_type_script = "uid://l53eav67i1ml"

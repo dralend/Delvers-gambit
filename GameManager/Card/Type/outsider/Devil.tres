@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c73ooovvw17ys"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_ft6co"]
+[ext_resource type="Texture2D" uid="uid://dboqjio210vnk" path="res://GameManager/Card/Type/outsider/art/devil.png" id="1_q37ux"]
+
+[resource]
+script = ExtResource("1_ft6co")
+card_name = "Devil"
+artwork = ExtResource("1_q37ux")
+up = 6
+right = 6
+down = 6
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

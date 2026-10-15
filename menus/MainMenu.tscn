@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://dveb0xx8ynk8q"]
+
+[ext_resource type="Script" uid="uid://ccgowgdtbuphy" path="res://menus/main_menu.gd" id="1_ct8su"]
+[ext_resource type="Texture2D" uid="uid://cuf2umay0yre1" path="res://background/main background.png" id="2_ot3ob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct8su"]
+bg_color = Color(0.18717611, 0.18717617, 0.18717602, 1)
+
+[node name="MainMenu" type="Control" unique_id=2070220192]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ct8su")
+
+[node name="background" type="TextureRect" parent="." unique_id=595971861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ot3ob")
+expand_mode = 1
+
+[node name="TitleArea" type="VBoxContainer" parent="." unique_id=792947005]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 56.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="TitleArea" unique_id=1702677720]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Delver's Gambit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="TitleArea" unique_id=1215839630]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Build Your Deck. Choose Your Path. Defeat the Bosses."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuPanel" type="PanelContainer" parent="." unique_id=1677950995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -28.0
+offset_right = 20.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel" unique_id=2107605320]
+layout_mode = 2
+
+[node name="NewRunButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=630188853]
+layout_mode = 2
+text = "NEW RUN"
+
+[node name="ContinueButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=928587887]
+layout_mode = 2
+text = "CONTINUE RUN"
+
+[node name="CollectionButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2116928058]
+layout_mode = 2
+text = "CARD COLLECTION"
+
+[node name="SettingsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1201127577]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=627768160]
+layout_mode = 2
+text = "QUIT"
+
+[node name="SettingsPanel" type="PanelContainer" parent="." unique_id=1891002051]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="SettingsPanel" unique_id=784331096]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ct8su")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsPanel/Panel" unique_id=1686718790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/Panel/MarginContainer" unique_id=180873030]
+layout_mode = 2
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=617251954]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "AUDIO SETTINGS"
+horizontal_alignment = 1
+
+[node name="MasterLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=349389771]
+layout_mode = 2
+text = "MASTER AUDIO"
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1938787998]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=886946976]
+layout_mode = 2
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1472491369]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.25
+
+[node name="SFXLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=784755789]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=2104623599]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.75
+
+[node name="DisplayLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1402719143]
+layout_mode = 2
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1093046415]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="ResolutionLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1686314626]
+layout_mode = 2
+
+[node name="ResolutionOptionButton" type="OptionButton" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=473711863]
+layout_mode = 2
+
+[node name="VSyncCheckBox" type="CheckBox" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1827863941]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="CloseButton" type="Button" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1796010092]
+layout_mode = 2
+text = "CLOSE"
+
+[node name="ResetButton" type="Button" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1050307060]
+layout_mode = 2
+text = "RESET"
+
+[node name="VersionLabel" type="Label" parent="." unique_id=1326601945]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -45.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Version 0.5"
+
+[connection signal="pressed" from="MenuPanel/VBoxContainer/NewRunButton" to="." method="_on_new_run_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/CollectionButton" to="." method="_on_collection_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

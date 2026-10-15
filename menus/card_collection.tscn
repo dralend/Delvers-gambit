@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cq7oh1eay8xeu"]
+
+[ext_resource type="Script" uid="uid://dwx28fja7adil" path="res://menus/card_collection.gd" id="1_ytiaq"]
+
+[node name="CardCollection" type="Control" unique_id=826248865]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ytiaq")
+
+[node name="Background" type="ColorRect" parent="." unique_id=347396656]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=3816476]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=349922982]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=563261676]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1515435842]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CARD COLLECTION "
+horizontal_alignment = 3
+
+[node name="CardCountLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=2020738130]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="DeckBuilderButton" type="Button" parent="MarginContainer/VBoxContainer/Header" unique_id=1837006812]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "BUILD DECK"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Header" unique_id=328538369]
+layout_mode = 2
+text = "Back"
+
+[node name="Separator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1625917673]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=11140650]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CollectionGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=356121844]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+columns = 4
+
+[node name="CardDetailsPanel" type="Panel" parent="." unique_id=839173306]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1071.0
+offset_top = 332.0
+offset_right = 1264.0
+offset_bottom = 778.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardDetailsPanel" unique_id=1897737505]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 81.0
+
+[node name="SelectedNameLabel" type="Label" parent="CardDetailsPanel/VBoxContainer" unique_id=510114862]
+layout_mode = 2
+text = "name"
+
+[node name="SelectedArtwork" type="TextureRect" parent="CardDetailsPanel/VBoxContainer" unique_id=327713064]
+custom_maximum_size = Vector2(160, 220)
+layout_mode = 2
+
+[node name="ValuesLabel" type="Label" parent="CardDetailsPanel/VBoxContainer" unique_id=2047497410]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="CardDetailsPanel/VBoxContainer" unique_id=1805760475]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Header/DeckBuilderButton" to="." method="_on_deck_builder_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Header/BackButton" to="." method="_on_back_button_pressed"]

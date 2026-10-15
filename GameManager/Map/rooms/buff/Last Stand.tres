@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuffData" format=3 uid="uid://dxbcpagkopuve"]
+
+[ext_resource type="Script" uid="uid://dfcreymgldgpq" path="res://GameManager/Map/rooms/buff/buff_data.gd" id="1_kbfg3"]
+
+[resource]
+script = ExtResource("1_kbfg3")
+buff_id = "last_stand"
+buff_name = "last stand"
+description = "If you lose, don't lose HP"
+metadata/_custom_type_script = "uid://dfcreymgldgpq"

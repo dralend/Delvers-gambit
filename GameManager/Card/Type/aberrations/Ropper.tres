@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://pvhr1p3h372p"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_77mej"]
+[ext_resource type="Texture2D" uid="uid://d0xra4bc56dip" path="res://GameManager/Card/Type/aberrations/art/Ropper.png" id="1_kotr5"]
+
+[resource]
+script = ExtResource("1_77mej")
+card_name = "Rooper"
+artwork = ExtResource("1_kotr5")
+up = 2
+right = 5
+down = 6
+left = 7
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

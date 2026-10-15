@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dmr74fg351k4"]
+
+[ext_resource type="Script" uid="uid://clmubg8srlama" path="res://GameManager/Map/rooms/Item/item_room.gd" id="1_rrogw"]
+
+[node name="ItemRoom" type="Control" unique_id=1141743362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rrogw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=997053219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+
+[node name="ItemChoices" type="HBoxContainer" parent="." unique_id=1591199526]
+custom_minimum_size = Vector2(160, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="SkipButton" type="Button" parent="." unique_id=1836436348]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 163.0
+offset_right = 21.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skip"
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1051586919]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -222.0
+offset_right = 151.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Choose an Item"
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=1114428444]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -171.0
+offset_right = 249.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Choose one item to take with you."
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

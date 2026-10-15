@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cyl4q6td3eoep"]
+
+[ext_resource type="Texture2D" uid="uid://ck4sy8ksytijk" path="res://GameManager/Card/Type/monstrosity/art/Hydra.png" id="1_4e1xw"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_v6u8f"]
+
+[resource]
+script = ExtResource("1_v6u8f")
+card_name = "Hydra"
+artwork = ExtResource("1_4e1xw")
+up = 6
+right = 4
+down = 6
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

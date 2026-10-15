@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cbm7bpof7tbdd"]
+
+[ext_resource type="Texture2D" uid="uid://bes44i42mehtt" path="res://GameManager/Card/Type/plants/art/trap.png" id="1_7bw45"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_a06ta"]
+
+[resource]
+script = ExtResource("1_a06ta")
+card_name = "Trap"
+artwork = ExtResource("1_7bw45")
+up = 4
+right = 5
+down = 7
+left = 3
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

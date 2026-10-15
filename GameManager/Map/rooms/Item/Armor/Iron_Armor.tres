@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cpm5li80jmrtl"]
+
+[ext_resource type="Texture2D" uid="uid://biubny6hye1bk" path="res://GameManager/Map/rooms/Item/Armor/Item__56.png" id="1_2t4t1"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_wui6d"]
+
+[resource]
+script = ExtResource("1_wui6d")
+item_id = "Iron_Armor"
+item_name = "Iron Armor"
+description = "Reduce the first health loss of each combat by 1."
+icon = ExtResource("1_2t4t1")
+item_type = 1
+metadata/_custom_type_script = "uid://l53eav67i1ml"

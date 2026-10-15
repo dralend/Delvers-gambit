@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://pf1clx58yfr0"]
+
+[ext_resource type="Script" uid="uid://cgq7vjskcf85b" path="res://menus/deck_builder.gd" id="1_t7ehn"]
+
+[node name="DeckBuilder" type="Control" unique_id=1769551298]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7ehn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=410611502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1744094237]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -52.5
+offset_right = 133.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=773827567]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=218073742]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=994846230]
+layout_mode = 2
+text = "DECK BUILDER"
+
+[node name="DeckCountLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1794282308]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Header" unique_id=1643192740]
+layout_mode = 2
+text = "BACK"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=276233036]
+layout_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1735317165]
+layout_mode = 2
+
+[node name="CollectionPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Content" unique_id=2097665921]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/CollectionPanel" unique_id=174068732]
+layout_mode = 2
+
+[node name="CollectionLabel" type="Label" parent="MarginContainer/VBoxContainer/Content/CollectionPanel/VBoxContainer" unique_id=738933366]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "UNLOCKED CARDS"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content/CollectionPanel/VBoxContainer" unique_id=772934301]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CollectionGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Content/CollectionPanel/VBoxContainer/ScrollContainer" unique_id=580585500]
+layout_mode = 2
+columns = 3
+
+[node name="DeckPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Content" unique_id=1719934352]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/DeckPanel" unique_id=489554912]
+layout_mode = 2
+
+[node name="DeckLabel" type="Label" parent="MarginContainer/VBoxContainer/Content/DeckPanel/VBoxContainer" unique_id=532187778]
+layout_mode = 2
+text = "CURRENT DECK"
+horizontal_alignment = 1
+
+[node name="VScrollBar" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content/DeckPanel/VBoxContainer" unique_id=1884607261]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DeckList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/DeckPanel/VBoxContainer/VScrollBar" unique_id=36030352]
+layout_mode = 2
+
+[node name="SaveDeckButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1859640938]
+layout_mode = 2
+text = "SAVE DECK"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Header/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveDeckButton" to="." method="_on_save_deck_button_pressed"]

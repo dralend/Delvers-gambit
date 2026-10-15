@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cr3kdbj4bo2ku"]
+
+[ext_resource type="Texture2D" uid="uid://yos2jqcmbmdt" path="res://GameManager/Map/rooms/Item/Weapons/Item__00.png" id="1_dvjl0"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_vesqx"]
+
+[resource]
+script = ExtResource("1_vesqx")
+item_id = "iron_sword"
+item_name = "iron sword"
+description = "Your cards each gains +1 power."
+icon = ExtResource("1_dvjl0")
+item_type = 0
+metadata/_custom_type_script = "uid://l53eav67i1ml"

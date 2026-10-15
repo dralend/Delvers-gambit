@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dn5ul5isr7q8r"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_sorgt"]
+[ext_resource type="Texture2D" uid="uid://bt4w3t5v426md" path="res://GameManager/Card/Type/dragons/art/Black dragon.png" id="1_v5hne"]
+
+[resource]
+script = ExtResource("1_sorgt")
+card_name = "Black Dragon"
+artwork = ExtResource("1_v5hne")
+up = 9
+right = 6
+down = 5
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

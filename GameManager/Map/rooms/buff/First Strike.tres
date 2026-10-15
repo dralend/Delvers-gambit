@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuffData" format=3 uid="uid://dnpoybmw7pqve"]
+
+[ext_resource type="Script" uid="uid://dfcreymgldgpq" path="res://GameManager/Map/rooms/buff/buff_data.gd" id="1_hrpjm"]
+
+[resource]
+script = ExtResource("1_hrpjm")
+buff_id = "first_strike"
+buff_name = "First strike"
+description = "Your first card placed gets +2 to its chosen attack value."
+metadata/_custom_type_script = "uid://dfcreymgldgpq"

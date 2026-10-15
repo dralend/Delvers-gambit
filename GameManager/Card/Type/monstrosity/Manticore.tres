@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cjinlv1qdvl2f"]
+
+[ext_resource type="Texture2D" uid="uid://dyoukns2kwp5g" path="res://GameManager/Card/Type/monstrosity/art/Manticore.png" id="1_fboe2"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_mniic"]
+
+[resource]
+script = ExtResource("1_mniic")
+card_name = "Manticore"
+artwork = ExtResource("1_fboe2")
+up = 6
+right = 4
+down = 6
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

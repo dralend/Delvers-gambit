@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cy63ay8ef7v7m"]
+
+[ext_resource type="Script" uid="uid://cgjs16wmki41w" path="res://menus/run_inventory_entry.gd" id="1_hs78v"]
+
+[node name="RunInventoryEntry" type="Panel" unique_id=1385239169]
+custom_minimum_size = Vector2(180, 200)
+custom_maximum_size = Vector2(200, 240)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hs78v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1438961132]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" unique_id=1813926151]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=318830504]
+layout_mode = 2
+text = "h"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=55799859]
+layout_mode = 2
+text = "yttj"
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cpckd3ah2j7eo"]
+
+[ext_resource type="Texture2D" uid="uid://c3m7oxrjl0eiy" path="res://GameManager/Card/Type/vermin/art/Birds.png" id="1_ntlv7"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_psx03"]
+
+[resource]
+script = ExtResource("1_psx03")
+card_name = "Birds"
+artwork = ExtResource("1_ntlv7")
+up = 3
+right = 4
+down = 2
+left = 4
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

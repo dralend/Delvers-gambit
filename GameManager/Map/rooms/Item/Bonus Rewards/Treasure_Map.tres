@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cv8xratovjuk5"]
+
+[ext_resource type="Texture2D" uid="uid://dma03kupcx0ic" path="res://GameManager/Map/rooms/Item/Bonus Rewards/Item__37.png" id="1_rpgc4"]
+[ext_resource type="Script" uid="uid://l53eav67i1ml" path="res://GameManager/Map/rooms/Item/item_data.gd" id="1_wer1d"]
+
+[resource]
+script = ExtResource("1_wer1d")
+item_id = "Treasure_Map"
+item_name = "Treasure Map"
+description = "Increases the chance of discovering valuable rewards."
+icon = ExtResource("1_rpgc4")
+item_type = 2
+metadata/_custom_type_script = "uid://l53eav67i1ml"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuffData" format=3 uid="uid://b31tigqnfrfyl"]
+
+[ext_resource type="Script" uid="uid://dfcreymgldgpq" path="res://GameManager/Map/rooms/buff/buff_data.gd" id="1_21olh"]
+
+[resource]
+script = ExtResource("1_21olh")
+buff_id = "weakening_curse"
+buff_name = "Weakening Curse"
+description = "Enemy cards have -1 to every side for the next combat."
+metadata/_custom_type_script = "uid://dfcreymgldgpq"

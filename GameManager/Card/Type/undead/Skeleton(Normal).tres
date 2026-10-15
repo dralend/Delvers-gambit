@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://haoh5o1wexij"]
+
+[ext_resource type="Texture2D" uid="uid://iy4t77t6gto7" path="res://GameManager/Card/Type/undead/art/Skeleton.png" id="1_7rjhl"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_o1w2r"]
+
+[resource]
+script = ExtResource("1_o1w2r")
+card_name = "Normal Skeleton "
+artwork = ExtResource("1_7rjhl")
+up = 5
+right = 4
+down = 2
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

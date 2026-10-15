@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c5oulyb3os4b0"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_a1ty3"]
+[ext_resource type="Texture2D" uid="uid://bytbc37swbwb3" path="res://GameManager/Card/Type/humanoid/art/Dwarf.png" id="1_r5nwx"]
+
+[resource]
+script = ExtResource("1_a1ty3")
+card_name = "Dwarf"
+artwork = ExtResource("1_r5nwx")
+up = 4
+right = 5
+down = 6
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

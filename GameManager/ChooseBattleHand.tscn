@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://heekofhxi6l1"]
+
+[ext_resource type="Script" uid="uid://rrxlr44yi3cy" path="res://GameManager/choose_battle_hand.gd" id="1_jiuja"]
+
+[node name="ChooseBattleHand" type="Control" unique_id=693237360]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jiuja")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1855686908]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1699498123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1916817626]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1367271552]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1177730127]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "CHOOSE BATTLE HAND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CombatTypeLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=866714937]
+layout_mode = 2
+
+[node name="HandCountLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=45601626]
+layout_mode = 2
+text = "0/5"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=302499849]
+layout_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1063799014]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AvailablePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Content" unique_id=841902764]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AvailableVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/AvailablePanel" unique_id=1003246228]
+layout_mode = 2
+
+[node name="AvailableLabel" type="Label" parent="MarginContainer/VBoxContainer/Content/AvailablePanel/AvailableVBox" unique_id=914795923]
+layout_mode = 2
+text = "RUN CARDS"
+
+[node name="AvailableScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content/AvailablePanel/AvailableVBox" unique_id=1075149116]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AvailableGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Content/AvailablePanel/AvailableVBox/AvailableScroll" unique_id=1718499990]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="HandPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Content" unique_id=921378449]
+layout_mode = 2
+
+[node name="HandVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/HandPanel" unique_id=537512510]
+layout_mode = 2
+
+[node name="HandLabel" type="Label" parent="MarginContainer/VBoxContainer/Content/HandPanel/HandVBox" unique_id=82430160]
+layout_mode = 2
+text = "BATTLE HAND"
+
+[node name="HandScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Content/HandPanel/HandVBox" unique_id=1442578112]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HandList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Content/HandPanel/HandVBox/HandScroll" unique_id=704658707]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ButtonBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=391630062]
+layout_mode = 2
+
+[node name="AutoSelectButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=373309173]
+layout_mode = 2
+text = "AUTO SELECT"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=452568603]
+layout_mode = 2
+text = "BACK"
+
+[node name="StartBattleButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=864152373]
+layout_mode = 2
+text = "START BATTLE"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonBar/AutoSelectButton" to="." method="_on_auto_select_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonBar/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonBar/StartBattleButton" to="." method="_on_start_battle_button_pressed"]

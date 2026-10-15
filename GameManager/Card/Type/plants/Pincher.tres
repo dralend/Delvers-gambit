@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bpmhvg34pyxsx"]
+
+[ext_resource type="Texture2D" uid="uid://wx1xepp8bow" path="res://GameManager/Card/Type/plants/art/Pincher.png" id="1_1kbw7"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_de40t"]
+
+[resource]
+script = ExtResource("1_de40t")
+card_name = "Pincher"
+artwork = ExtResource("1_1kbw7")
+up = 4
+right = 5
+down = 7
+left = 3
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bqbjvkosmwv82"]
+
+[ext_resource type="Script" uid="uid://badr2d1tneqjd" path="res://GameManager/Map/map_room.gd" id="1_vwyg3"]
+
+[node name="MapRoom" type="Button" unique_id=1262594825]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_vwyg3")
+
+[node name="RoomLabel" type="Label" parent="." unique_id=385826899]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

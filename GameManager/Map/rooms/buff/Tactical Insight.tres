@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuffData" format=3 uid="uid://c8xr7igv5jpr3"]
+
+[ext_resource type="Script" uid="uid://dfcreymgldgpq" path="res://GameManager/Map/rooms/buff/buff_data.gd" id="1_bt7bh"]
+
+[resource]
+script = ExtResource("1_bt7bh")
+buff_id = "tactical_insight"
+buff_name = "Tactical Insight"
+description = "Gain an advantage when choosing your cards for the next combat."
+metadata/_custom_type_script = "uid://dfcreymgldgpq"

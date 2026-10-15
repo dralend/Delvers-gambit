@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bdw7nxj5f5tgh"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_e1i8d"]
+[ext_resource type="Texture2D" uid="uid://cpqw3qfqoq02a" path="res://GameManager/Card/Type/vermin/art/squirrels.png" id="1_h0ajb"]
+
+[resource]
+script = ExtResource("1_e1i8d")
+card_name = "Squirrel"
+artwork = ExtResource("1_h0ajb")
+up = 3
+right = 4
+down = 2
+left = 4
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"
