@@ -81,7 +81,7 @@ size_flags_vertical = 3
 [node name="AvailableGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Content/AvailablePanel/AvailableVBox/AvailableScroll" unique_id=1718499990]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 3
+columns = 2
 
 [node name="HandPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Content" unique_id=921378449]
 layout_mode = 2

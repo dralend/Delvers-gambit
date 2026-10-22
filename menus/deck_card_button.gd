@@ -7,14 +7,24 @@ var card_path: String = ""
 var card_data: CardData = null
 var variant_data: Dictionary = {}
 
-@onready var artwork: TextureRect = $VBoxContainer/Artwork
-@onready var rarity_label: Label = $VBoxContainer/RarityLabel
-@onready var name_label: Label = $VBoxContainer/NameLabel
-@onready var values_label: Label = $VBoxContainer/ValuesLabel
+var artwork: TextureRect
+var rarity_label: Label
+var name_label: Label
+var values_label: Label
 
 
 func _ready() -> void:
-	custom_minimum_size = Vector2(180.0, 240.0)
+	custom_minimum_size = Vector2(220.0, 310.0)
+	_resolve_controls()
+	update_display()
+
+
+func _resolve_controls() -> void:
+	# Resolve nodes dynamically because setup_variant() can run before controls are ready.
+	artwork = get_node_or_null("VBoxContainer/Artwork") as TextureRect
+	rarity_label = get_node_or_null("VBoxContainer/RarityLabel") as Label
+	name_label = get_node_or_null("VBoxContainer/NameLabel") as Label
+	values_label = get_node_or_null("VBoxContainer/ValuesLabel") as Label
 
 
 func setup(path: String, data: CardData) -> void:
@@ -33,6 +43,12 @@ func setup_variant(variant: Dictionary, data: CardData) -> void:
 
 func update_display() -> void:
 	if card_data == null:
+		return
+
+	if artwork == null or rarity_label == null or name_label == null or values_label == null:
+		_resolve_controls()
+	if artwork == null or rarity_label == null or name_label == null or values_label == null:
+		push_warning("DeckCardButton: expected child controls were not found under VBoxContainer.")
 		return
 
 	name_label.text = card_data.card_name
@@ -56,6 +72,10 @@ func update_display() -> void:
 
 
 func update_rarity() -> void:
+	if rarity_label == null:
+		_resolve_controls()
+	if rarity_label == null:
+		return
 	if card_data == null:
 		rarity_label.text = ""
 		return

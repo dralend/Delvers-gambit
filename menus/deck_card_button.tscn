@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7d4fqp2ecnps" path="res://menus/deck_card_button.gd" id="1_es6ju"]
 
 [node name="DeckCardButton" type="Button" unique_id=1987842486]
-custom_minimum_size = Vector2(150, 210)
+custom_minimum_size = Vector2(220, 310)
 offset_right = 8.0
 offset_bottom = 8.0
 script = ExtResource("1_es6ju")
@@ -21,6 +21,8 @@ layout_mode = 2
 horizontal_alignment = 1
 
 [node name="Artwork" type="TextureRect" parent="VBoxContainer" unique_id=226268329]
+custom_minimum_size = Vector2(0, 190)
+size_flags_vertical = 3
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1

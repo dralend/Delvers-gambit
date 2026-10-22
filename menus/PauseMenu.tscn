@@ -1,13 +1,70 @@
 [gd_scene format=3 uid="uid://djgokqx2rcnyc"]
 
 [ext_resource type="Script" uid="uid://bwqg0yvkqbw22" path="res://menus/pause_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="2_6aksj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bwqk"]
+bg_color = Color(0.14767182, 0.14767182, 0.14767176, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ok5bw"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osgim"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hc3p1"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv173"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gn8ei"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pe7f0"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3eo8v"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7olb3"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0fpy"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rbjfk"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f21uk"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3r54"]
+texture = ExtResource("2_6aksj")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucoie"]
 bg_color = Color(0.18717611, 0.18717617, 0.18717602, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve3yk"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gucx3"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bks60"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pm5yb"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jb3b"]
+texture = ExtResource("2_6aksj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c16ax"]
+texture = ExtResource("2_6aksj")
+
 [node name="PauseMenu" type="Control" unique_id=689090864]
-process_mode = 3
-z_index = 500
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +81,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.7882353)
+color = Color(0.05882353, 0.05882353, 0.8862745, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=134327306]
 layout_mode = 1
@@ -37,6 +94,7 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1087232724]
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0bwqk")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1782968152]
 layout_mode = 2
@@ -51,6 +109,7 @@ theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1319217944]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 36
 text = "PAUSED"
 horizontal_alignment = 1
@@ -58,25 +117,40 @@ horizontal_alignment = 1
 [node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1556801441]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ok5bw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_osgim")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hc3p1")
 text = "RESUME"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1911227446]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_rv173")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gn8ei")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pe7f0")
 text = "SETTINGS"
 
 [node name="ReturnToMapButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=218854595]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_3eo8v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7olb3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k0fpy")
 text = "RETURN TO MAP"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2111766670]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_rbjfk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f21uk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o3r54")
 text = "MAIN MENU"
 
 [node name="SettingsPanel" type="PanelContainer" parent="." unique_id=2134584682]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,11 +179,10 @@ layout_mode = 2
 
 [node name="SettingsTitle" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=577469024]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_font_sizes/font_size = 30
 text = "AUDIO SETTINGS"
-
-[node name="MasterLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1515335223]
-layout_mode = 2
-text = "AUDIO SETTINGS"
+horizontal_alignment = 1
 
 [node name="MasterSlider" type="HSlider" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1759761674]
 layout_mode = 2
@@ -119,6 +192,7 @@ value = 1.0
 
 [node name="MusicLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=741108368]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "MUSIC"
 horizontal_alignment = 1
 
@@ -130,6 +204,7 @@ value = 0.25
 
 [node name="SFXLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=223542700]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "SFX"
 horizontal_alignment = 1
 
@@ -141,25 +216,40 @@ value = 0.75
 
 [node name="DisplayLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=116247225]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 
 [node name="FullscreenCheckBox" type="CheckBox" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1488043537]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "Fullscreen"
 
 [node name="ResolutionLabel" type="Label" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1124741376]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 
 [node name="ResolutionOptionButton" type="OptionButton" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=642489857]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 
 [node name="VSyncCheckBox" type="CheckBox" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=314184768]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "Fullscreen"
 
 [node name="CloseButton" type="Button" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=811030401]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ve3yk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gucx3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bks60")
 text = "CLOSE"
 
 [node name="ResetButton" type="Button" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1726471645]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_pm5yb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7jb3b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c16ax")
 text = "RESET"

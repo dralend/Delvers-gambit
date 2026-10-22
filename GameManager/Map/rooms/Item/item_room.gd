@@ -97,7 +97,6 @@ func _on_item_chosen(index: int) -> void:
 		return
 	if index >= offered_item_paths.size():
 		return
-	var item_path: String = offered_item_paths[index]
 	var item: ItemData = offered_items[index]
 	print("Selected item: ", item.item_name)
 	RunManager.give_item(item)

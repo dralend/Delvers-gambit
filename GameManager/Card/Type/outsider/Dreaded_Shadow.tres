@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cea40rmrm5q6v"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_1al22"]
+
+[resource]
+script = ExtResource("2_1al22")
+card_name = "Dreaded Shadow"
+up = 6
+right = 6
+down = 6
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

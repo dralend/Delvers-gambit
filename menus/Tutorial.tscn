@@ -1,6 +1,36 @@
 [gd_scene format=3 uid="uid://bcmvyjxh4sa8q"]
 
 [ext_resource type="Script" uid="uid://2drokumfrhwu" path="res://menus/tutorial.gd" id="1_6kkba"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="4_6b76n"]
+[ext_resource type="Texture2D" path="res://menus/delvers_shop_background.png" id="fantasy_bg"]
+[ext_resource type="Theme" uid="uid://btyopkch1fv3e" path="res://menus/fantasy_menu_theme.tres" id="fantasy_theme"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sclb"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwb8a"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3md8l"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krt1h"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6abno"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bur5c"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cpfp"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqity"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkgwb"]
+texture = ExtResource("4_6b76n")
 
 [node name="Tutorial" type="Control" unique_id=1420402630]
 layout_mode = 3
@@ -9,6 +39,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FantasyBackdrop" type="TextureRect" parent="." unique_id=174913884]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("fantasy_theme")
+texture = ExtResource("fantasy_bg")
+expand_mode = 1
+stretch_mode = 6
 script = ExtResource("1_6kkba")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1462143786]
@@ -45,12 +89,14 @@ theme_override_constants/separation = 6
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=164550303]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 32
 text = "HOW TO PLAY"
 vertical_alignment = 1
 
 [node name="PageLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1310112961]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "PAGE 1 / 6"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -78,23 +124,27 @@ theme_override_constants/separation = 10
 [node name="SectionTitle" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=1549748930]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 24
 vertical_alignment = 1
 
 [node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=2066267666]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 18
 autowrap_mode = 3
 
 [node name="ExampleContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=1797503430]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
+alignment = 1
 
 [node name="TipLabel" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=242978278]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -105,11 +155,19 @@ layout_mode = 2
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=749694250]
 custom_minimum_size = Vector2(120, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_6sclb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kwb8a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3md8l")
 text = "BACK"
 
 [node name="SkipButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=813195391]
 custom_minimum_size = Vector2(120, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_krt1h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6abno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bur5c")
 text = "SKIP TUTORIAL"
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1693864452]
@@ -119,4 +177,8 @@ size_flags_horizontal = 3
 [node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1566742592]
 custom_minimum_size = Vector2(120, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_0cpfp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rqity")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dkgwb")
 text = "NEXT"

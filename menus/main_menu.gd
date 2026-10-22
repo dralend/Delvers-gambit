@@ -3,6 +3,8 @@ extends Control
 @onready var new_run_button: Button = $MenuPanel/VBoxContainer/NewRunButton
 @onready var continue_button: Button = $MenuPanel/VBoxContainer/ContinueButton
 @onready var collection_button: Button = $MenuPanel/VBoxContainer/CollectionButton
+@onready var shop_button: Button = $MenuPanel/VBoxContainer/ShopButton
+@onready var gold_display: Label = $GoldDisplay
 @onready var settings_button: Button = $MenuPanel/VBoxContainer/SettingsButton
 @onready var quit_button: Button = $MenuPanel/VBoxContainer/QuitButton
 @onready var settings_panel: PanelContainer = $SettingsPanel
@@ -18,6 +20,7 @@ extends Control
 
 func _ready() -> void:
 	settings_panel.hide()
+	update_gold_display()
 	setup_resolution_options()
 	update_settings_ui()
 	master_slider.value_changed.connect(_on_master_slider_changed)
@@ -32,6 +35,15 @@ func _ready() -> void:
 
 func update_continue_button() -> void:
 	continue_button.disabled = not RunManager.run_active
+
+
+func update_gold_display() -> void:
+	if gold_display != null:
+		gold_display.text = "Gold: " + str(RunManager.reward_points)
+
+
+func _on_shop_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://menus/Shop.tscn")
 
 
 func _on_new_run_button_pressed() -> void:

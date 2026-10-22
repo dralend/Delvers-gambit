@@ -1,12 +1,16 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cpckd3ah2j7eo"]
 
-[ext_resource type="Texture2D" uid="uid://c3m7oxrjl0eiy" path="res://GameManager/Card/Type/vermin/art/Birds.png" id="1_ntlv7"]
+[ext_resource type="Texture2D" uid="uid://c3m7oxrjl0eiy" path="res://GameManager/Card/Type/vermin/art/Birds.png" id="1_0sp86"]
 [ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_psx03"]
+[ext_resource type="Texture2D" uid="uid://bdl3tgq1luy4f" path="res://GameManager/Card/Type/vermin/art/Birds (mythic).png" id="2_2yo07"]
+[ext_resource type="Texture2D" uid="uid://dwebueteycbxv" path="res://GameManager/Card/Type/vermin/art/Birds(rare).png" id="3_uvdus"]
 
 [resource]
 script = ExtResource("1_psx03")
 card_name = "Birds"
-artwork = ExtResource("1_ntlv7")
+artwork = ExtResource("1_0sp86")
+rare_artwork = ExtResource("3_uvdus")
+mythic_artwork = ExtResource("2_2yo07")
 up = 3
 right = 4
 down = 2

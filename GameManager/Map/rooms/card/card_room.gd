@@ -8,34 +8,46 @@ const CARD_SCENE: PackedScene = preload("res://GameManager/Card/card.tscn")
 const CARD_SIZE := Vector2(160, 220)
 
 var card_pool: Array[String] = [
-	"res://GameManager/Card/Type/vermin/Birds.tres",
-	"res://GameManager/Card/Type/vermin/Insects.tres",
-	"res://GameManager/Card/Type/vermin/Rats.tres",
-	"res://GameManager/Card/Type/vermin/Squirrel.tres",
-	"res://GameManager/Card/Type/undead/Skeleton(Armored).tres",
-	"res://GameManager/Card/Type/undead/Skeleton(Normal).tres",
-	"res://GameManager/Card/Type/undead/Zombie.tres",
-	"res://GameManager/Card/Type/plants/Mandrake.tres",
-	"res://GameManager/Card/Type/plants/Pincher.tres",
-	"res://GameManager/Card/Type/plants/Trap.tres",
-	"res://GameManager/Card/Type/outsider/Angel.tres",
-	"res://GameManager/Card/Type/outsider/Devil.tres",
-	"res://GameManager/Card/Type/outsider/Fiend.tres",
-	"res://GameManager/Card/Type/monstrosity/Bulette.tres",
-	"res://GameManager/Card/Type/monstrosity/Gorgon.tres",
-	"res://GameManager/Card/Type/monstrosity/Hydra.tres",
-	"res://GameManager/Card/Type/monstrosity/Manticore.tres",
-	"res://GameManager/Card/Type/humanoid/Dwarf.tres",
-	"res://GameManager/Card/Type/humanoid/Elf(high).tres",
-	"res://GameManager/Card/Type/humanoid/Elf(wild).tres",
-	"res://GameManager/Card/Type/humanoid/Human.tres",
+	"res://GameManager/Card/Type/aberrations/Brainspawn.tres",
+	"res://GameManager/Card/Type/aberrations/Chitinous.tres",
+	"res://GameManager/Card/Type/aberrations/EyeTyrant.tres",
+	"res://GameManager/Card/Type/aberrations/Fleshwarped.tres",
+	"res://GameManager/Card/Type/aberrations/Voidspawn.tres",
 	"res://GameManager/Card/Type/dragons/BlackDragon.tres",
 	"res://GameManager/Card/Type/dragons/BlueDragon.tres",
 	"res://GameManager/Card/Type/dragons/GreenDragon.tres",
 	"res://GameManager/Card/Type/dragons/RedDragon.tres",
-	"res://GameManager/Card/Type/aberrations/Abalith.tres",
-	"res://GameManager/Card/Type/aberrations/EyeGaser.tres",
-	"res://GameManager/Card/Type/aberrations/Ropper.tres"
+	"res://GameManager/Card/Type/dragons/WhiteDragon.tres",
+	"res://GameManager/Card/Type/humanoid/Dwarf.tres",
+	"res://GameManager/Card/Type/humanoid/Elf(high).tres",
+	"res://GameManager/Card/Type/humanoid/Elf(wild).tres",
+	"res://GameManager/Card/Type/humanoid/Giant.tres",
+	"res://GameManager/Card/Type/humanoid/Human.tres",
+	"res://GameManager/Card/Type/monstrosity/Bulette.tres",
+	"res://GameManager/Card/Type/monstrosity/Gorgon.tres",
+	"res://GameManager/Card/Type/monstrosity/Hydra.tres",
+	"res://GameManager/Card/Type/monstrosity/Manticore.tres",
+	"res://GameManager/Card/Type/monstrosity/Winged_Winter_Wolf.tres",
+	"res://GameManager/Card/Type/outsider/Angel.tres",
+	"res://GameManager/Card/Type/outsider/Archfey.tres",
+	"res://GameManager/Card/Type/outsider/Devil.tres",
+	"res://GameManager/Card/Type/outsider/Dreaded_Shadow.tres",
+	"res://GameManager/Card/Type/outsider/Fiend.tres",
+	"res://GameManager/Card/Type/plants/Mandrake.tres",
+	"res://GameManager/Card/Type/plants/Myconid.tres",
+	"res://GameManager/Card/Type/plants/Pincher.tres",
+	"res://GameManager/Card/Type/plants/Trap.tres",
+	"res://GameManager/Card/Type/plants/Treefolk.tres",
+	"res://GameManager/Card/Type/undead/ghast.tres",
+	"res://GameManager/Card/Type/undead/ghost.tres",
+	"res://GameManager/Card/Type/undead/Skeleton(Armored).tres",
+	"res://GameManager/Card/Type/undead/Skeleton(Normal).tres",
+	"res://GameManager/Card/Type/undead/Zombie.tres",
+	"res://GameManager/Card/Type/vermin/Birds.tres",
+	"res://GameManager/Card/Type/vermin/Insects.tres",
+	"res://GameManager/Card/Type/vermin/Rats.tres",
+	"res://GameManager/Card/Type/vermin/Spider.tres",
+	"res://GameManager/Card/Type/vermin/Squirrel.tres"
 ]
 
 var offered_cards: Array[CardData] = []
@@ -86,6 +98,7 @@ func apply_rarity_bonus(card_data: CardData) -> void:
 			card_data.right = mini(card_data.right + 1, 10)
 			card_data.down = mini(card_data.down + 1, 10)
 			card_data.left = mini(card_data.left + 1, 10)
+			CardVariantGenerator.apply_rare_ability(card_data)
 		CardData.Rarity.MYTHIC:
 			card_data.up = mini(card_data.up + 2, 10)
 			card_data.right = mini(card_data.right + 2, 10)

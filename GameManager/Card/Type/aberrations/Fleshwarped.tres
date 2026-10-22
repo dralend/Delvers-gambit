@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dcxnp3a5gc488"]
+
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_3vx7u"]
+
+[resource]
+script = ExtResource("2_3vx7u")
+card_name = "Fleshwarped"
+up = 7
+right = 6
+down = 5
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

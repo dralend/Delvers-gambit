@@ -3,9 +3,11 @@ extends Control
 const DECK_CARD_SCENE: PackedScene = preload("res://menus/deck_card_button.tscn")
 const DECK_SIZE: int = 5
 
+
+
+@onready var deck_count_label: Label = $MarginContainer/VBoxContainer/Header/DeckCountLabel
 @onready var collection_grid: GridContainer = $MarginContainer/VBoxContainer/Content/CollectionPanel/VBoxContainer/ScrollContainer/CollectionGrid
 @onready var deck_list: VBoxContainer = $MarginContainer/VBoxContainer/Content/DeckPanel/VBoxContainer/VScrollBar/DeckList
-@onready var deck_count_label: Label = $MarginContainer/VBoxContainer/Header/DeckCountLabel
 @onready var save_deck_button: Button = $MarginContainer/VBoxContainer/SaveDeckButton
 
 var working_deck: Array[Dictionary] = []

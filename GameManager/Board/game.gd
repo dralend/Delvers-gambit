@@ -362,7 +362,11 @@ func end_game() -> void:
 func _on_continue_button_pressed() -> void:
 	var encounter_complete: bool = (RunManager.encounter_room_id == -1)
 	if encounter_complete:
-		get_tree().change_scene_to_file("res://GameManager/Map/RunMap.tscn")
+		if RunManager.post_boss_shop_available:
+			RunManager.post_boss_shop_available = false
+			get_tree().change_scene_to_file("res://menus/PostBossChoice.tscn")
+		else:
+			get_tree().change_scene_to_file("res://GameManager/Map/RunMap.tscn")
 		return
 	get_tree().reload_current_scene()
 
@@ -816,7 +820,14 @@ func handle_encounter_complete() -> void:
 			result_label.text = "Victory!"
 	result_label.text += "\n+" + str(money_earned) + " gold"
 	RunManager.complete_selected_room()
+	# Standard and Long runs offer a shop after each non-final boss.
+	RunManager.post_boss_shop_available = (
+		RunManager.current_combat_type == "boss"
+		and RunManager.current_run_length in ["standard", "long"]
+		and not RunManager.is_run_complete()
+	)
 	if RunManager.is_run_complete():
+		RunManager.post_boss_shop_available = false
 		result_label.text = "FINAL BOSS DEFEATED!\nYOU WIN!"
 		RunManager.complete_run_length(RunManager.current_run_length)
 		RunManager.run_won = true

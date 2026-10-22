@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://durorem4p74un"
-path="res://.godot/imported/abalith.png-60d5565002dff0f97810ccf32cf0d743.ctex"
+uid="uid://dwebueteycbxv"
+path="res://.godot/imported/Birds(rare).png-a0fe688ce2733ac0f562865bc7317405.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/Card/Type/aberrations/art/abalith.png"
-dest_files=["res://.godot/imported/abalith.png-60d5565002dff0f97810ccf32cf0d743.ctex"]
+source_file="res://GameManager/Card/Type/vermin/art/Birds(rare).png"
+dest_files=["res://.godot/imported/Birds(rare).png-a0fe688ce2733ac0f562865bc7317405.ctex"]
 
 [params]
 

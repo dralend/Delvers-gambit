@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7gfu5hgdrnnq"
-path="res://.godot/imported/eyegazer.png-e73a62d0ed944a4bd6e35a4c417f79d1.ctex"
+uid="uid://bcihquu6fqx28"
+path="res://.godot/imported/IMG_0255.png-6ca6f8d6e3071dd93f5dee43f15edd71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/Card/Type/aberrations/art/eyegazer.png"
-dest_files=["res://.godot/imported/eyegazer.png-e73a62d0ed944a4bd6e35a4c417f79d1.ctex"]
+source_file="res://background/IMG_0255.png"
+dest_files=["res://.godot/imported/IMG_0255.png-6ca6f8d6e3071dd93f5dee43f15edd71.ctex"]
 
 [params]
 

@@ -1,9 +1,31 @@
 [gd_scene format=3 uid="uid://berp3osqgi5gs"]
 
 [ext_resource type="Script" uid="uid://dwrnibn3fc1y8" path="res://menus/game_over.gd" id="1_qdfbd"]
+[ext_resource type="Texture2D" uid="uid://bu1p4d3wghvx3" path="res://background/end screen.png" id="2_7dapq"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="3_1dg2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dg2u"]
+bg_color = Color(0.28485027, 0.2848503, 0.28485018, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3cnko"]
+texture = ExtResource("3_1dg2u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21onh"]
+texture = ExtResource("3_1dg2u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tuos7"]
+texture = ExtResource("3_1dg2u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvs5c"]
+texture = ExtResource("3_1dg2u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kehua"]
+texture = ExtResource("3_1dg2u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5mj87"]
+texture = ExtResource("3_1dg2u")
 
 [node name="GameOver" type="Control" unique_id=196690564]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,14 +34,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qdfbd")
 
-[node name="DimBackground" type="ColorRect" parent="." unique_id=683653521]
+[node name="DimBackground" type="TextureRect" parent="." unique_id=1210329396]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+texture = ExtResource("2_7dapq")
+expand_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1477172647]
 layout_mode = 1
@@ -32,6 +55,7 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1772846329]
 custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dg2u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=582921720]
 layout_mode = 2
@@ -47,9 +71,19 @@ text = "Your run has ended."
 horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1555548364]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_3cnko")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_21onh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tuos7")
 text = "NEW RUN"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=181900112]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mvs5c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kehua")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5mj87")
 text = "MAIN MENU"

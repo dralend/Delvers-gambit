@@ -39,8 +39,10 @@ func setup_combat_label() -> void:
 func create_available_cards() -> void:
 	for child: Node in available_grid.get_children():
 		child.queue_free()
-	print("Creating battle cards: ", RunManager.card_collection_variants.size())
-	for variant: Dictionary in RunManager.card_collection_variants:
+
+	var best_cards: Array[Dictionary] = get_best_available_cards()
+	print("Creating best-rarity battle cards: ", best_cards.size())
+	for variant: Dictionary in best_cards:
 		var card_path: String = str(variant.get("path", ""))
 		if card_path.is_empty():
 			continue
@@ -55,8 +57,36 @@ func create_available_cards() -> void:
 		available_grid.add_child(button)
 		button.setup(card_path, card_data)
 		button.card_pressed.connect(_on_available_card_pressed.bind(variant))
-		print("Displayed battle card: ", card_data.card_name, " | Rarity: ", card_data.rarity)
+		print("Displayed best card: ", card_data.card_name, " | Rarity: ", card_data.rarity)
 
+
+func get_best_available_cards() -> Array[Dictionary]:
+	# Keep only the highest rarity currently unlocked for each card name.
+	# Rarity enum order is NORMAL < RARE < MYTHIC.
+	var best_by_name: Dictionary = {}
+	for variant: Dictionary in RunManager.card_collection_variants:
+		var path: String = str(variant.get("path", ""))
+		if path.is_empty():
+			continue
+		var card_data: CardData = RunManager.create_saved_card_variant(variant)
+		if card_data == null:
+			continue
+		var card_name: String = card_data.card_name
+		var rarity: int = int(variant.get("rarity", card_data.rarity))
+		if not best_by_name.has(card_name):
+			best_by_name[card_name] = variant
+			continue
+		var existing: Dictionary = best_by_name[card_name]
+		var existing_data: CardData = RunManager.create_saved_card_variant(existing)
+		var existing_rarity: int = int(existing.get("rarity", existing_data.rarity if existing_data != null else CardData.Rarity.NORMAL))
+		if rarity > existing_rarity:
+			best_by_name[card_name] = variant
+
+	var result: Array[Dictionary] = []
+	for card_variant: Variant in best_by_name.values():
+		if card_variant is Dictionary:
+			result.append(card_variant)
+	return result
 
 func _on_available_card_pressed(_card_path: String, variant: Dictionary) -> void:
 	if selected_hand.size() >= BATTLE_HAND_SIZE:
@@ -68,16 +98,14 @@ func _on_available_card_pressed(_card_path: String, variant: Dictionary) -> void
 
 
 func variant_is_selected(variant: Dictionary) -> bool:
+	# A card type is identified by its source resource path.
+	# Only one copy of that type is allowed in the battle hand,
+	# even if the collection contains Normal, Rare, and Mythic variants.
 	var new_path: String = str(variant.get("path", ""))
-	var new_rarity: int = int(variant.get("rarity", CardData.Rarity.NORMAL))
 	for selected: Dictionary in selected_hand:
-		var selected_path: String = str(selected.get("path", ""))
-		var selected_rarity: int = int(selected.get("rarity", CardData.Rarity.NORMAL))
-		if selected_path == new_path:
-			if selected_rarity == new_rarity:
-				return true
+		if str(selected.get("path", "")) == new_path:
+			return true
 	return false
-
 
 func update_hand_display() -> void:
 	for child: Node in hand_list.get_children():
@@ -106,14 +134,10 @@ func _remove_card(variant: Dictionary) -> void:
 
 func find_selected_variant(variant: Dictionary) -> int:
 	var path: String = str(variant.get("path", ""))
-	var rarity: int = int(variant.get("rarity", CardData.Rarity.NORMAL))
 	for i in range(selected_hand.size()):
-		var selected: Dictionary = selected_hand[i]
-		if str(selected.get("path", "")) == path:
-			if int(selected.get("rarity", 0)) == rarity:
-				return i
+		if str(selected_hand[i].get("path", "")) == path:
+			return i
 	return -1
-
 
 func get_rarity_text(rarity: CardData.Rarity) -> String:
 	match rarity:
@@ -128,9 +152,7 @@ func get_rarity_text(rarity: CardData.Rarity) -> String:
 
 func _on_auto_select_button_pressed() -> void:
 	selected_hand.clear()
-	var available_cards: Array[Dictionary] = []
-	for variant: Dictionary in RunManager.card_collection_variants:
-		available_cards.append(variant)
+	var available_cards: Array[Dictionary] = get_best_available_cards()
 	available_cards.sort_custom(
 		func(a: Dictionary, b: Dictionary) -> bool:
 			var card_a: CardData = RunManager.create_saved_card_variant(a)
@@ -139,13 +161,18 @@ func _on_auto_select_button_pressed() -> void:
 				return false
 			if card_b == null:
 				return true
-			return get_card_power(card_a) > get_card_power(card_b)
+			# Choose the strongest cards after selecting each card name's
+			# highest unlocked rarity.
+			var power_a: int = get_card_power(card_a)
+			var power_b: int = get_card_power(card_b)
+			if power_a == power_b:
+				return int(a.get("rarity", card_a.rarity)) > int(b.get("rarity", card_b.rarity))
+			return power_a > power_b
 	)
 	var amount: int = mini(BATTLE_HAND_SIZE, available_cards.size())
 	for i in range(amount):
 		selected_hand.append(available_cards[i])
 	update_hand_display()
-
 
 func _on_start_battle_button_pressed() -> void:
 	if selected_hand.size() != BATTLE_HAND_SIZE:

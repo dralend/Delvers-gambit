@@ -37,15 +37,15 @@ var tutorial_easy_unlocked: bool = true
 var tutorial_normal_unlocked: bool = false
 var tutorial_hard_unlocked: bool = false
 
-@onready var title_label: Label = $MarginContainer/VBoxContainer/Header/TitleLabel
-@onready var page_label: Label = $MarginContainer/VBoxContainer/Header/PageLabel
-@onready var section_title: Label = $MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/SectionTitle
-@onready var description_label: Label = $MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/DescriptionLabel
-@onready var example_container: VBoxContainer = $MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/ExampleContainer
-@onready var tip_label: Label = $MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/TipLabel
-@onready var back_button: Button = $MarginContainer/VBoxContainer/ButtonBar/BackButton
-@onready var skip_button: Button = $MarginContainer/VBoxContainer/ButtonBar/SkipButton
-@onready var next_button: Button = $MarginContainer/VBoxContainer/ButtonBar/NextButton
+@onready var title_label: Label = $"../MarginContainer/VBoxContainer/Header/TitleLabel"
+@onready var page_label: Label = $"../MarginContainer/VBoxContainer/Header/PageLabel"
+@onready var section_title: Label = $"../MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/SectionTitle"
+@onready var description_label: Label = $"../MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/DescriptionLabel"
+@onready var example_container: VBoxContainer = $"../MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/ExampleContainer"
+@onready var tip_label: Label = $"../MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox/TipLabel"
+@onready var back_button: Button = $"../MarginContainer/VBoxContainer/ButtonBar/BackButton"
+@onready var skip_button: Button = $"../MarginContainer/VBoxContainer/ButtonBar/SkipButton"
+@onready var next_button: Button = $"../MarginContainer/VBoxContainer/ButtonBar/NextButton"
 
 
 func _ready() -> void:

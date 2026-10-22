@@ -5,14 +5,15 @@ enum RunLength {
 	STANDARD,
 	LONG
 }
-
+@onready var title_label: Label = $CenterContainer/Panel/VBoxContainer/TitleLabel
+@onready var description_label: Label = $CenterContainer/Panel/VBoxContainer/DescriptionLabel
+@onready var tutorial_button: Button = $CenterContainer/Panel/VBoxContainer/TutorialButton
 @onready var easy_button: Button = $CenterContainer/Panel/VBoxContainer/EasyButton
 @onready var normal_button: Button = $CenterContainer/Panel/VBoxContainer/NormalButton
 @onready var hard_button: Button = $CenterContainer/Panel/VBoxContainer/HardButton
 @onready var run_info_label: Label = $CenterContainer/Panel/VBoxContainer/RunInfoLabel
 @onready var start_button: Button = $CenterContainer/Panel/VBoxContainer/StartButton
 @onready var back_button: Button = $CenterContainer/Panel/VBoxContainer/BackButton
-@onready var tutorial_button: Button = $CenterContainer/Panel/VBoxContainer/TutorialButton
 
 var selected_run_length: RunLength = RunLength.SHORT
 

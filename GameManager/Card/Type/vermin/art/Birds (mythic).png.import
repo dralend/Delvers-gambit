@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbw3k5tjptt4h"
-path="res://.godot/imported/card.png-3b0f7d3f710407d8c0010b8d3d1b38ac.ctex"
+uid="uid://bdl3tgq1luy4f"
+path="res://.godot/imported/Birds (mythic).png-96674cbd2f3f09f90ff2a772690ccef0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/Card/Art/card.png"
-dest_files=["res://.godot/imported/card.png-3b0f7d3f710407d8c0010b8d3d1b38ac.ctex"]
+source_file="res://GameManager/Card/Type/vermin/art/Birds (mythic).png"
+dest_files=["res://.godot/imported/Birds (mythic).png-96674cbd2f3f09f90ff2a772690ccef0.ctex"]
 
 [params]
 

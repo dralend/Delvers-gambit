@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://dlkyi8cdk2r28"]
 
 [ext_resource type="Script" uid="uid://dpkcyu44wed6d" path="res://GameManager/Map/rooms/card/card_room.gd" id="1_cklaq"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="2_ud2nr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vp83o"]
+texture = ExtResource("2_ud2nr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2awe"]
+texture = ExtResource("2_ud2nr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lb38e"]
+texture = ExtResource("2_ud2nr")
 
 [node name="CardRoom" type="Control" unique_id=658594926]
 layout_mode = 3
@@ -48,7 +58,10 @@ offset_right = 21.0
 offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_vp83o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e2awe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lb38e")
 text = "Skip"
 
 [node name="TitleLabel" type="Label" parent="." unique_id=1202124869]

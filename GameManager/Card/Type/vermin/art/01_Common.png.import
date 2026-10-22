@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0xra4bc56dip"
-path="res://.godot/imported/Ropper.png-a40f70f1ed64bf690a14676f152f1fbe.ctex"
+uid="uid://x58ji5uslr0b"
+path="res://.godot/imported/01_Common.png-cf9291a6838bd5204024c27a59d5b259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameManager/Card/Type/aberrations/art/Ropper.png"
-dest_files=["res://.godot/imported/Ropper.png-a40f70f1ed64bf690a14676f152f1fbe.ctex"]
+source_file="res://GameManager/Card/Type/vermin/art/01_Common.png"
+dest_files=["res://.godot/imported/01_Common.png-cf9291a6838bd5204024c27a59d5b259.ctex"]
 
 [params]
 

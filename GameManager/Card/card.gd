@@ -34,7 +34,25 @@ var bonus_sources: Array[Dictionary] = []
 var bonus_tooltip: String = ""
 
 
+func _resolve_card_nodes() -> void:
+	card_background = get_node_or_null("CardBackground") as Panel
+	background = get_node_or_null("Background") as Panel
+	rarity_frame = get_node_or_null("RarityFrame") as Panel
+	artwork = get_node_or_null("Artwork") as TextureRect
+	rarity_label = get_node_or_null("RarityLabel") as Label
+	up_value = get_node_or_null("UpValue") as Label
+	right_value = get_node_or_null("RightValue") as Label
+	down_value = get_node_or_null("DownValue") as Label
+	left_value = get_node_or_null("LeftValue") as Label
+	name_label = get_node_or_null("NameLabel") as Label
+	card_back = get_node_or_null("CardBack") as Panel
+	bonus_container = get_node_or_null("BonusContainer") as VBoxContainer
+	bonus_icons = get_node_or_null("BonusContainer/BonusIcons") as HBoxContainer
+	ability_label = get_node_or_null("BonusContainer/AbilityLabel") as Label
+
+
 func _ready() -> void:
+	_resolve_card_nodes()
 	update_card()
 	update_owner_visual()
 	clear_bonus_display()
@@ -46,11 +64,16 @@ func _ready() -> void:
 
 func set_card_data(new_data: CardData) -> void:
 	data = new_data
+	_resolve_card_nodes()
 	update_card()
 
 
 func update_card() -> void:
 	if data == null:
+		return
+	_resolve_card_nodes()
+	if name_label == null or artwork == null or up_value == null or right_value == null or down_value == null or left_value == null:
+		push_warning("GameCard is missing required display nodes; card update skipped.")
 		return
 	name_label.text = data.card_name
 	var selected_artwork: Texture2D = data.artwork
@@ -257,7 +280,12 @@ func _build_hover_info() -> String:
 	match data.rarity:
 		CardData.Rarity.RARE:
 			info += "\n\nRARE CARD BONUS\n+1 to all sides (max 10)"
-			info += "\nRare cards have improved stats."
+			if not data.rare_ability.strip_edges().is_empty():
+				info += "\n\nABILITY: " + _format_ability_name(data.rare_ability)
+				if not data.rare_description.strip_edges().is_empty():
+					info += "\n" + data.rare_description
+			else:
+				info += "\nRare cards have improved stats."
 		CardData.Rarity.MYTHIC:
 			info += "\n\nMYTHIC CARD BONUS\n+2 to all sides (max 10)"
 			if not data.mythic_ability.strip_edges().is_empty():

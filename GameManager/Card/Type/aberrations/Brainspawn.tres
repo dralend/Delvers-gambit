@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b8n3srx6y85fk"]
 
-[ext_resource type="Texture2D" uid="uid://durorem4p74un" path="res://GameManager/Card/Type/aberrations/art/abalith.png" id="1_alm72"]
 [ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_o0lnl"]
 
 [resource]
 script = ExtResource("1_o0lnl")
-card_name = "Abalith"
-artwork = ExtResource("1_alm72")
+card_name = "Brainspawn"
 up = 6
 right = 7
 down = 4

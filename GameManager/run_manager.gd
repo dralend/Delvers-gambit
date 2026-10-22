@@ -8,6 +8,8 @@ const BATTLE_HAND_SIZE: int = 5
 const DECK_SIZE: int = 5
 
 const RUN_LENGTH_SAVE_PATH: String = "user://run_length_progress.cfg"
+const GOLD_SAVE_PATH: String = "user://permanent_gold.cfg"
+const PENDING_PURCHASES_SAVE_PATH: String = "user://pending_shop_purchases.cfg"
 
 const BUFF_EXTRA_CARD_POWER: String = "extra_card_power"
 const BUFF_WEAKENING_CURSE: String = "weakening_curse"
@@ -56,6 +58,10 @@ var unlocked_relic_ids: Array[String] = []
 
 
 var reward_points: int = 0
+var pending_run_items: Array[String] = []
+var pending_shop_bonus_tokens: int = 0
+var post_boss_shop_available: bool = false
+var shop_return_to_map: bool = false
 
 var active_combat_buffs: Array[String] = []
 var game_difficulty: int = 1
@@ -91,6 +97,8 @@ func _ready() -> void:
 	load_relics()
 	load_relic_unlocks()
 	load_run_length_progress()
+	load_permanent_gold()
+	load_pending_shop_purchases()
 
 
 func start_new_run() -> void:
@@ -105,6 +113,17 @@ func start_new_run() -> void:
 	player_cards.clear()
 	initialize_starting_cards()
 	items.clear()
+	active_combat_buffs.clear()
+	if pending_shop_bonus_tokens > 0:
+		active_combat_buffs.append(BUFF_EXTRA_CARD_POWER)
+		pending_shop_bonus_tokens = maxi(0, pending_shop_bonus_tokens - 1)
+		save_pending_shop_purchases()
+	# Apply shop purchases at the beginning of the next run.
+	for purchased_item_path: String in pending_run_items:
+		if ResourceLoader.exists(purchased_item_path) and not items.has(purchased_item_path):
+			items.append(purchased_item_path)
+	pending_run_items.clear()
+	save_pending_shop_purchases()
 	setup_starting_deck()
 	battle_hand.clear()
 	print("New run started.")
@@ -483,6 +502,7 @@ func give_room_reward(base_reward: int) -> void:
 	if has_relic("lucky_crown"):
 		reward += 10
 	reward_points += reward
+	save_permanent_gold()
 	print("Reward received: ", reward)
 	print("Total rewards: ", reward_points)
 
@@ -522,6 +542,7 @@ func award_enemy_defeat_money() -> int:
 		reward += 10
 
 	reward_points += reward
+	save_permanent_gold()
 	print("Enemy defeated! Difficulty: ", game_difficulty,
 		" | Combat: ", current_combat_type,
 		" | Money earned: ", reward,
@@ -786,6 +807,84 @@ func is_relic_unlocked(relic_id: String) -> bool:
 		if relic_data != null and relic_data.item_id.strip_edges().to_lower() == normalized_id:
 			return true
 	return false
+
+func save_permanent_gold() -> void:
+	var config := ConfigFile.new()
+	config.set_value("wallet", "gold", maxi(0, reward_points))
+	var error := config.save(GOLD_SAVE_PATH)
+	if error != OK:
+		push_error("Failed to save permanent gold: " + str(error))
+
+
+func load_permanent_gold() -> void:
+	var config := ConfigFile.new()
+	if config.load(GOLD_SAVE_PATH) == OK:
+		reward_points = maxi(0, int(config.get_value("wallet", "gold", reward_points)))
+	else:
+		save_permanent_gold()
+
+
+func spend_gold(amount: int) -> bool:
+	if amount <= 0 or reward_points < amount:
+		return false
+	reward_points -= amount
+	save_permanent_gold()
+	return true
+
+
+func queue_shop_item(item_path: String) -> bool:
+	if not ResourceLoader.exists(item_path):
+		return false
+	var item := load(item_path) as ItemData
+	if item == null or item.is_relic:
+		return false
+	if not spend_gold(25):
+		return false
+	pending_run_items.append(item_path)
+	save_pending_shop_purchases()
+	return true
+
+
+func queue_shop_card(card_path: String) -> bool:
+	if not ResourceLoader.exists(card_path):
+		return false
+	if not spend_gold(40):
+		return false
+	unlock_card(card_path)
+	return true
+
+
+func buy_shop_bonus() -> bool:
+	if not spend_gold(30):
+		return false
+	# A purchased bonus grants a small permanent wallet rebate on the next run start.
+	pending_shop_bonus_tokens += 1
+	save_pending_shop_purchases()
+	return true
+
+
+func save_pending_shop_purchases() -> void:
+	var config := ConfigFile.new()
+	config.set_value("purchases", "items", pending_run_items)
+	config.set_value("purchases", "bonus_tokens", pending_shop_bonus_tokens)
+	var error := config.save(PENDING_PURCHASES_SAVE_PATH)
+	if error != OK:
+		push_error("Failed to save shop purchases: " + str(error))
+
+
+func load_pending_shop_purchases() -> void:
+	var config := ConfigFile.new()
+	if config.load(PENDING_PURCHASES_SAVE_PATH) != OK:
+		pending_run_items.clear()
+		return
+	var saved: Variant = config.get_value("purchases", "items", [])
+	pending_shop_bonus_tokens = maxi(0, int(config.get_value("purchases", "bonus_tokens", 0)))
+	pending_run_items.clear()
+	if saved is Array:
+		for path: Variant in saved:
+			if path is String and ResourceLoader.exists(path):
+				pending_run_items.append(String(path))
+
 
 func is_run_length_unlocked(run_length: String) -> bool:
 	match run_length.to_lower():

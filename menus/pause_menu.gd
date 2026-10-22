@@ -1,22 +1,19 @@
 extends Control
 
+
 @onready var resume_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton
 @onready var settings_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsButton
 @onready var return_to_map_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ReturnToMapButton
 @onready var main_menu_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton
-
-@onready var settings_panel: Control = $SettingsPanel
-
 @onready var master_slider: HSlider = $SettingsPanel/Panel/MarginContainer/VBoxContainer/MasterSlider
 @onready var music_slider: HSlider = $SettingsPanel/Panel/MarginContainer/VBoxContainer/MusicSlider
 @onready var sfx_slider: HSlider = $SettingsPanel/Panel/MarginContainer/VBoxContainer/SFXSlider
-
 @onready var fullscreen_check_box: CheckBox = $SettingsPanel/Panel/MarginContainer/VBoxContainer/FullscreenCheckBox
 @onready var resolution_option: OptionButton = $SettingsPanel/Panel/MarginContainer/VBoxContainer/ResolutionOptionButton
 @onready var vsync_check_box: CheckBox = $SettingsPanel/Panel/MarginContainer/VBoxContainer/VSyncCheckBox
-
 @onready var close_button: Button = $SettingsPanel/Panel/MarginContainer/VBoxContainer/CloseButton
 @onready var reset_button: Button = $SettingsPanel/Panel/MarginContainer/VBoxContainer/ResetButton
+@onready var settings_panel: PanelContainer = $SettingsPanel
 
 var is_paused: bool = false
 
