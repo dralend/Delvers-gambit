@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cn8mvc1ihro48"]
+
+[ext_resource type="Texture2D" uid="uid://3utdqcg8o77d" path="res://GameManager/Card/Type/dragons/art/Green dragon.png" id="1_h05w2"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_hgkia"]
+
+[resource]
+script = ExtResource("2_hgkia")
+card_name = "Green Dragon"
+artwork = ExtResource("1_h05w2")
+up = 8
+right = 6
+down = 5
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

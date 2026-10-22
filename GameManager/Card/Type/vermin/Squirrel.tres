@@ -11,6 +11,4 @@ up = 3
 right = 4
 down = 2
 left = 4
-rare_ability = "Swarm Tactics"
-rare_description = "Gain +1 attack when another friendly card is orthogonally adjacent."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

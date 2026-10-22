@@ -11,6 +11,4 @@ up = 8
 right = 5
 down = 5
 left = 5
-rare_ability = "Dragon Roar"
-rare_description = "Gain +1 attack against enemies with a side value of 8 or higher."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

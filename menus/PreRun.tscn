@@ -1,6 +1,62 @@
 [gd_scene format=3 uid="uid://buscg4frr4nwe"]
 
 [ext_resource type="Script" uid="uid://boug2thc4qihq" path="res://menus/pre_run.gd" id="1_37c4l"]
+[ext_resource type="Texture2D" uid="uid://cuf2umay0yre1" path="res://background/main background.png" id="2_wapwn"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="4_6sclb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfy7y"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ds1u"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jt2i"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwb8a"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3md8l"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krt1h"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6abno"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bur5c"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cpfp"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqity"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkgwb"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pw4c5"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prv2y"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofimp"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpp8x"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4us5"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whl80"]
+texture = ExtResource("4_6sclb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4nogt"]
+texture = ExtResource("4_6sclb")
 
 [node name="PreRun" type="Control" unique_id=1883680548]
 layout_mode = 3
@@ -11,13 +67,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_37c4l")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1633337607]
+[node name="ColorRect" type="TextureRect" parent="." unique_id=839680128]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_wapwn")
+expand_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1566666249]
 layout_mode = 1
@@ -40,7 +98,7 @@ grow_vertical = 2
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1451961706]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.91, 0.8, 1)
 theme_override_font_sizes/font_size = 40
 text = "CHOOSE RUN LENGTH"
 horizontal_alignment = 1
@@ -48,52 +106,76 @@ vertical_alignment = 1
 
 [node name="DescriptionLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1200251739]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.91, 0.8, 1)
 theme_override_font_sizes/font_size = 30
 text = "Choose how long you want your adventure to be."
 
 [node name="TutorialButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=26513816]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_cfy7y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6ds1u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5jt2i")
 text = "Tutorial"
 
 [node name="EasyButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1065621846]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_kwb8a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3md8l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_krt1h")
 text = "EASY"
 
 [node name="NormalButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=545262397]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_6abno")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bur5c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0cpfp")
 text = "NORMAL"
 
 [node name="HardButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=747384267]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_rqity")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dkgwb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pw4c5")
 text = "HARD"
 
 [node name="RunInfoLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=518295895]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.91, 0.8, 1)
 theme_override_font_sizes/font_size = 24
 text = "Select a difficulty."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=2109530494]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_prv2y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ofimp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dpp8x")
 text = "START RUN"
 
 [node name="BackButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1749512764]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_t4us5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_whl80")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4nogt")
 text = "BACK"
 
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]

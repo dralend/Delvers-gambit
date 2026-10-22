@@ -7,10 +7,11 @@ const PLAYER: int = 0
 
 @onready var collection_grid: GridContainer = $MarginContainer/VBoxContainer/ScrollContainer/CollectionGrid
 @onready var details_panel: Panel = $CardDetailsPanel
-@onready var selected_name_label: Label = $CardDetailsPanel/VBoxContainer/VScrollBar/SelectedNameLabel
-@onready var selected_artwork: TextureRect = $CardDetailsPanel/VBoxContainer/VScrollBar/SelectedArtwork
-@onready var values_label: Label = $CardDetailsPanel/VBoxContainer/VScrollBar/ValuesLabel
-@onready var description_label: Label = $CardDetailsPanel/VBoxContainer/VScrollBar/DescriptionLabel
+@onready var selected_name_label: Label = $CardDetailsPanel/VBoxContainer/SelectedNameLabel
+@onready var selected_artwork: TextureRect = $CardDetailsPanel/VBoxContainer/SelectedArtwork
+@onready var values_label: Label = $CardDetailsPanel/VBoxContainer/ValuesLabel
+@onready var description_label: Label = $CardDetailsPanel/VBoxContainer/DescriptionLabel
+@onready var card_count_label: Label = $MarginContainer/VBoxContainer/Header/CardCountLabel
 @onready var main_container: MarginContainer = $MarginContainer
 @onready var main_vbox: VBoxContainer = $MarginContainer/VBoxContainer
 @onready var scroll_container: ScrollContainer = $MarginContainer/VBoxContainer/ScrollContainer
@@ -19,6 +20,14 @@ var all_card_paths: Array[String] = []
 
 
 func _ready() -> void:
+	# Keep the backdrop decorative so it never blocks clicks.
+	var backdrop: Control = get_node_or_null("CollectionBackdrop") as Control
+	if backdrop != null:
+		backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var background_overlay: Control = get_node_or_null("Background") as Control
+	if background_overlay != null:
+		background_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 	main_container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	main_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	main_vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -28,114 +37,87 @@ func _ready() -> void:
 	collection_grid.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	collection_grid.custom_minimum_size = Vector2(900, 0)
 	collection_grid.columns = 4
+	collection_grid.visible = true
+	collection_grid.z_index = 2
+	collection_grid.add_theme_constant_override("h_separation", 18)
+	collection_grid.add_theme_constant_override("v_separation", 18)
 	load_all_cards()
 	build_collection()
 	details_panel.visible = false
+	print("Card Collection loaded: ", all_card_paths.size(), " card types; ",
+		RunManager.card_collection.size(), " unlocked paths; ",
+		RunManager.card_collection_variants.size(), " saved variants.")
+	var deck_button: Button = get_node_or_null("MarginContainer/VBoxContainer/Header/DeckBuilderButton") as Button
+	if deck_button != null and not deck_button.pressed.is_connected(_on_deck_builder_button_pressed):
+		deck_button.pressed.connect(_on_deck_builder_button_pressed)
+	var back_button: Button = get_node_or_null("MarginContainer/VBoxContainer/Header/BackButton") as Button
+	if back_button != null and not back_button.pressed.is_connected(_on_back_button_pressed):
+		back_button.pressed.connect(_on_back_button_pressed)
 	call_deferred("_debug_collection_layout")
 
 
 func load_all_cards() -> void:
 	all_card_paths.clear()
-	print("Starting card scan...")
-	print("Folder exists: ", DirAccess.dir_exists_absolute("res://GameManager/Card/Type"))
-	scan_card_folder("res://GameManager/Card/Type")
-	print("Cards found: ", all_card_paths.size())
-	for path: String in all_card_paths:
-		print("Found card: ", path)
-
-
-func scan_card_folder(folder_path: String) -> void:
-	var directory: DirAccess = DirAccess.open(folder_path)
-	if directory == null:
-		push_error("Could not open card folder: " + folder_path)
-		return
-	directory.list_dir_begin()
-	while true:
-		var file_name: String = directory.get_next()
-		if file_name.is_empty():
-			break
-		if file_name == "." or file_name == "..":
-			continue
-		var full_path: String = folder_path + "/" + file_name
-		if directory.current_is_dir():
-			scan_card_folder(full_path)
-			continue
-		if file_name.ends_with(".tres"):
-			var card_data: CardData = load(full_path) as CardData
-			if card_data != null:
-				all_card_paths.append(full_path)
-	directory.list_dir_end()
+	# Use the explicit database rather than directory scanning.
+	for card_path: String in CardDatabase.ALL_CARDS:
+		if ResourceLoader.exists(card_path) and not all_card_paths.has(card_path):
+			var data := ResourceLoader.load(card_path) as CardData
+			if data != null:
+				all_card_paths.append(card_path)
+	all_card_paths.sort()
+	if card_count_label != null:
+		card_count_label.text = "%d unlocked / %d card types" % [
+			RunManager.card_collection.size(), all_card_paths.size()
+		]
+	if all_card_paths.is_empty():
+		push_error("Card Collection: no CardData resources loaded from CardDatabase.ALL_CARDS.")
 
 
 func build_collection() -> void:
-	print("Collection grid valid: ", is_instance_valid(collection_grid))
 	for child: Node in collection_grid.get_children():
 		collection_grid.remove_child(child)
 		child.queue_free()
-	print("Building collection from ", all_card_paths.size(), " cards.")
+	collection_grid.visible = true
+	collection_grid.columns = 4
+
+	var display_paths: Array[String] = []
+	for card_path: String in RunManager.card_collection:
+		if all_card_paths.has(card_path) and not display_paths.has(card_path):
+			display_paths.append(card_path)
 	for card_path: String in all_card_paths:
+		if not display_paths.has(card_path):
+			display_paths.append(card_path)
+	for card_path: String in display_paths:
 		create_card_variants(card_path)
-	print("Cards added to grid: ", collection_grid.get_child_count())
-	print("Grid size: ", collection_grid.size)
-	print("Grid position: ", collection_grid.global_position)
-	print("Grid visible: ", collection_grid.is_visible_in_tree())
 
 
 func create_card_variants(card_path: String) -> void:
-	var base_card: CardData = load(card_path) as CardData
+	var base_card := ResourceLoader.load(card_path) as CardData
 	if base_card == null:
 		push_warning("Could not load card: " + card_path)
 		return
-	var normal_card: CardData = base_card.duplicate() as CardData
-	normal_card.rarity = CardData.Rarity.NORMAL
-	normal_card.mythic_ability = ""
-	normal_card.mythic_description = ""
-	create_collection_entry(
-		card_path,
-		CardData.Rarity.NORMAL,
-		normal_card
-	)
-	var rare_card: CardData = CardVariantGenerator.create_variant(
-		card_path,
-		CardData.Rarity.RARE
-	)
-	if rare_card != null:
-		create_collection_entry(
-			card_path,
-			CardData.Rarity.RARE,
-			rare_card
-		)
-	var mythic_card: CardData = CardVariantGenerator.create_variant(
-		card_path,
-		CardData.Rarity.MYTHIC
-	)
-	if mythic_card != null:
-		create_collection_entry(
-			card_path,
-			CardData.Rarity.MYTHIC,
-			mythic_card
-		)
 
+	var best_variant: Dictionary = {}
+	var best_rarity := -1
+	for variant: Dictionary in RunManager.card_collection_variants:
+		if str(variant.get("path", "")) != card_path:
+			continue
+		var rarity := int(variant.get("rarity", int(CardData.Rarity.NORMAL)))
+		if rarity > best_rarity:
+			best_rarity = rarity
+			best_variant = variant
 
-# ============================================================
-# DETERMINE IF VARIANT IS UNLOCKED
-# ============================================================
+	if RunManager.card_collection.has(card_path):
+		if not best_variant.is_empty():
+			var saved_card := RunManager.create_saved_card_variant(best_variant) as CardData
+			if saved_card != null:
+				create_unlocked_card(saved_card)
+				return
+		# Older saves store unlocked cards as paths without rarity dictionaries.
+		create_unlocked_card(base_card)
+	else:
+		create_locked_card(base_card)
 
-func create_collection_entry(card_path: String, rarity: CardData.Rarity, generated_card: CardData) -> void:
-	var saved_variant: Dictionary = get_saved_variant(card_path, rarity)
-	if not saved_variant.is_empty():
-		var saved_card: CardData = RunManager.create_saved_card_variant(
-			saved_variant
-		)
-		if saved_card != null:
-			create_unlocked_card(saved_card)
-		return
-	create_locked_card(generated_card)
-
-
-# ============================================================
-# FIND SAVED VARIANT
-# ============================================================
 
 func get_saved_variant(card_path: String, rarity: CardData.Rarity) -> Dictionary:
 	for variant: Dictionary in RunManager.card_collection_variants:
@@ -168,6 +150,9 @@ func create_unlocked_card(card_data: CardData) -> void:
 		return
 	collection_grid.add_child(card)
 	card.custom_minimum_size = Vector2(220, 300)
+	card.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	card.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	card.mouse_filter = Control.MOUSE_FILTER_STOP
 	card.set_card_data(card_data)
 	card.set_card_owner(PLAYER)
 	if not card.card_clicked.is_connected(_on_card_clicked):
@@ -192,6 +177,7 @@ func create_locked_card(card_data: CardData) -> void:
 		push_error("Could not instantiate LockedCard.")
 		return
 	locked_card.custom_minimum_size = Vector2(220, 300)
+	locked_card.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var question_mark: Label = locked_card.get_node_or_null(
 		"QuestionMark"
 	) as Label

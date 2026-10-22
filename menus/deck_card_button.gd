@@ -14,7 +14,7 @@ var variant_data: Dictionary = {}
 
 
 func _ready() -> void:
-	custom_minimum_size = Vector2(180.0, 240.0)
+	custom_minimum_size = Vector2(220.0, 310.0)
 
 
 func setup(path: String, data: CardData) -> void:

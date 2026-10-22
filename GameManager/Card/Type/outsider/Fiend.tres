@@ -11,6 +11,4 @@ up = 6
 right = 6
 down = 6
 left = 6
-rare_ability = "Planar Shift"
-rare_description = "Gain +1 defense on every side."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

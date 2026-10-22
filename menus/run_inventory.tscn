@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://bqe5tibyclgvm"]
 
 [ext_resource type="Script" uid="uid://vqxvy54smcou" path="res://menus/run_inventory.gd" id="1_er270"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="2_luxfc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_er270"]
+texture = ExtResource("2_luxfc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luxfc"]
+texture = ExtResource("2_luxfc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4w3x"]
+texture = ExtResource("2_luxfc")
 
 [node name="RunInventory" type="Control" unique_id=257402583]
-z_index = 1000
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,6 +52,7 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=462126856]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 50
 text = "RUN INVENTORY"
 horizontal_alignment = 1
@@ -49,6 +60,7 @@ vertical_alignment = 1
 
 [node name="ItemsTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1360114397]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 30
 text = "ITEMS"
 horizontal_alignment = 1
@@ -64,6 +76,7 @@ columns = 4
 
 [node name="RelicsTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=262039690]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 30
 text = "RELICS"
 horizontal_alignment = 1
@@ -79,6 +92,7 @@ columns = 4
 
 [node name="BuffsTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1166290434]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 theme_override_font_sizes/font_size = 30
 text = "ACTIVE BUFFS"
 horizontal_alignment = 1
@@ -94,8 +108,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=186894872]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_er270")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_luxfc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p4w3x")
 text = "CLOSE"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

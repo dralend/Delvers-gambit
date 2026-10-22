@@ -29,12 +29,14 @@ stretch_mode = 5
 
 [node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=318830504]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "h"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=55799859]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "yttj"
 horizontal_alignment = 1
 autowrap_mode = 3

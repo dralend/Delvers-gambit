@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dn3qirhppn0js"]
+
+[ext_resource type="Texture2D" uid="uid://qdxlqe56dgnp" path="res://GameManager/Card/Type/humanoid/art/Human.png" id="1_2tg8m"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_fiwb2"]
+
+[resource]
+script = ExtResource("2_fiwb2")
+card_name = "Human"
+artwork = ExtResource("1_2tg8m")
+up = 5
+right = 5
+down = 5
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

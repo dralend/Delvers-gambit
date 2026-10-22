@@ -1,9 +1,27 @@
 [gd_scene format=3 uid="uid://berp3osqgi5gs"]
 
 [ext_resource type="Script" uid="uid://dwrnibn3fc1y8" path="res://menus/game_over.gd" id="1_qdfbd"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="2_7dapq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vivr"]
+texture = ExtResource("2_7dapq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbdty"]
+texture = ExtResource("2_7dapq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5gy4"]
+texture = ExtResource("2_7dapq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kehua"]
+texture = ExtResource("2_7dapq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvs5c"]
+texture = ExtResource("2_7dapq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dg2u"]
+texture = ExtResource("2_7dapq")
 
 [node name="GameOver" type="Control" unique_id=196690564]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,18 +56,34 @@ layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=753556243]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "GAME OVER"
 horizontal_alignment = 1
 
 [node name="MessageLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=894802381]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
 text = "Your run has ended."
 horizontal_alignment = 1
 
-[node name="ResetButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1555548364]
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1320022460]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1555548364]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1vivr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qbdty")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v5gy4")
 text = "NEW RUN"
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=181900112]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_kehua")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mvs5c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1dg2u")
 text = "MAIN MENU"

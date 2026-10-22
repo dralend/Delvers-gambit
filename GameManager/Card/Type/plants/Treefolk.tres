@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://becrtegejlfh2"]
+
+[ext_resource type="Texture2D" uid="uid://cibx5dxt68dyu" path="res://GameManager/Card/Type/plants/art/Mandrake.png" id="1_vjwed"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_m0k4r"]
+
+[resource]
+script = ExtResource("2_m0k4r")
+card_name = "Mandrake"
+artwork = ExtResource("1_vjwed")
+up = 4
+right = 7
+down = 6
+left = 7
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

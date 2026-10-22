@@ -11,6 +11,4 @@ up = 4
 right = 7
 down = 6
 left = 7
-rare_ability = "Entangling Vines"
-rare_description = "Gain +1 attack when attacking an enemy card."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

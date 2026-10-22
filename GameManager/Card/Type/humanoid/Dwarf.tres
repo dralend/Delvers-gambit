@@ -11,6 +11,4 @@ up = 4
 right = 5
 down = 6
 left = 5
-rare_ability = "Tactical Formation"
-rare_description = "Gain +1 defense on sides facing friendly cards."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

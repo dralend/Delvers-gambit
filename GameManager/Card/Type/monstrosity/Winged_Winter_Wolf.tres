@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dhq05o7ymm7ap"]
+
+[ext_resource type="Texture2D" uid="uid://dqfcetbhq660c" path="res://GameManager/Card/Type/monstrosity/art/Gorgon.png" id="1_7nena"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_sow0f"]
+
+[resource]
+script = ExtResource("2_sow0f")
+card_name = "Gorgon"
+artwork = ExtResource("1_7nena")
+up = 6
+right = 4
+down = 6
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://pf1clx58yfr0"]
 
 [ext_resource type="Script" uid="uid://cgq7vjskcf85b" path="res://menus/deck_builder.gd" id="1_t7ehn"]
+[ext_resource type="Theme" path="res://menus/fantasy_menu_theme.tres" id="fantasy_theme"]
+[ext_resource type="Texture2D" path="res://menus/delvers_shop_background.png" id="fantasy_bg"]
 
 [node name="DeckBuilder" type="Control" unique_id=1769551298]
+
+[node name="FantasyBackdrop" type="TextureRect" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("fantasy_bg")
+expand_mode = 1
+stretch_mode = 6
+
+theme = ExtResource("fantasy_theme")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

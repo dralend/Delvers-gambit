@@ -7,10 +7,8 @@
 script = ExtResource("1_jaeed")
 card_name = "Armored Skeleton "
 artwork = ExtResource("1_i8shc")
-up = 5
-right = 4
-down = 2
-left = 5
-rare_ability = "Deathless Return"
-rare_description = "Survive the first capture attempt against this card each battle."
+up = 6
+right = 6
+down = 3
+left = 6
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

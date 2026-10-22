@@ -1,8 +1,6 @@
 extends Control
 
-const ENTRY_SCENE: PackedScene = preload(
-	"res://menus/RunInventoryEntry.tscn"
-)
+const ENTRY_SCENE: PackedScene = preload("res://menus/RunInventoryEntry.tscn")
 
 @onready var items_grid: GridContainer = $MarginContainer/VBoxContainer/ItemsScroll/ItemsGrid
 @onready var relics_grid: GridContainer = $MarginContainer/VBoxContainer/RelicsScroll/RelicsGrid

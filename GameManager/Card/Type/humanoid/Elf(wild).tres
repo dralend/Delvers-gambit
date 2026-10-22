@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cj1ol7f43dvuv"]
 
-[ext_resource type="Texture2D" uid="uid://fvhfqgh8jtd8" path="res://GameManager/Card/Type/humanoid/art/wild elf.png" id="1_g5hgg"]
+[ext_resource type="Texture2D" uid="uid://dko1551se70he" path="res://GameManager/Card/Type/humanoid/art/wild elf.png" id="1_g5hgg"]
 [ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_m3ysc"]
 
 [resource]
@@ -11,6 +11,4 @@ up = 4
 right = 4
 down = 4
 left = 4
-rare_ability = "Tactical Formation"
-rare_description = "Gain +1 defense on sides facing friendly cards."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

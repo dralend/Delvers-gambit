@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://brak2ksrgiom1"]
 
 [ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="1_b1nn4"]
-[ext_resource type="Texture2D" uid="uid://drjodlujk2qcm" path="res://GameManager/Card/Type/dragons/art/red dragon.png" id="1_sy7fb"]
+[ext_resource type="Texture2D" uid="uid://b83g4j7dji4qm" path="res://GameManager/Card/Type/dragons/art/red dragon.png" id="1_sy7fb"]
 
 [resource]
 script = ExtResource("1_b1nn4")
@@ -11,6 +11,4 @@ up = 10
 right = 7
 down = 5
 left = 7
-rare_ability = "Dragon Roar"
-rare_description = "Gain +1 attack against enemies with a side value of 8 or higher."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

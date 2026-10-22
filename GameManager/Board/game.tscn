@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://bfv57woeiaaww" path="res://GameManager/Card/Type/outsider/Angel.tres" id="4_mjqcq"]
 [ext_resource type="Resource" uid="uid://cjinlv1qdvl2f" path="res://GameManager/Card/Type/monstrosity/Manticore.tres" id="4_xskei"]
 [ext_resource type="Resource" uid="uid://d38ttqf7iet6x" path="res://GameManager/Card/Type/humanoid/Human.tres" id="5_dsbpe"]
-[ext_resource type="Resource" uid="uid://b8n3srx6y85fk" path="res://GameManager/Card/Type/aberrations/Abalith.tres" id="6_gpak1"]
+[ext_resource type="Resource" uid="uid://b8n3srx6y85fk" path="res://GameManager/Card/Type/aberrations/Brainspawn.tres" id="6_gpak1"]
 [ext_resource type="Resource" uid="uid://pwkhvwft78qe" path="res://GameManager/Card/Type/vermin/Rats.tres" id="6_om1jj"]
 [ext_resource type="Resource" uid="uid://2s5pduvajxcj" path="res://GameManager/Card/Type/undead/Zombie.tres" id="10_mjqcq"]
 [ext_resource type="PackedScene" uid="uid://djgokqx2rcnyc" path="res://menus/PauseMenu.tscn" id="11_v7uax"]

@@ -1,10 +1,92 @@
 [gd_scene format=3 uid="uid://dveb0xx8ynk8q"]
 
 [ext_resource type="Script" uid="uid://ccgowgdtbuphy" path="res://menus/main_menu.gd" id="1_ct8su"]
-[ext_resource type="Texture2D" uid="uid://cuf2umay0yre1" path="res://background/main background.png" id="2_ot3ob"]
+[ext_resource type="Texture2D" uid="uid://cuf2umay0yre1" path="res://background/main background.png" id="3_rmsp1"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="4_218cn"]
+[ext_resource type="Theme" uid="uid://btyopkch1fv3e" path="res://menus/fantasy_menu_theme.tres" id="fantasy_theme"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct8su"]
-bg_color = Color(0.18717611, 0.18717617, 0.18717602, 1)
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(0.03529412, 0.023529412, 0.019607844, 0.94509804)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmsp1"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_218cn"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vp83o"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2awe"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lb38e"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7fxis"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k15nl"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahxlq"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4yyw3"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bslpt"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ih3s6"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53qvp"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_je8l7"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnv6w"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8c1o"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h14mx"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8pvqd"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_on7of"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikdwa"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cimsg"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7hll"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnlcr"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_voxdf"]
+texture = ExtResource("4_218cn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucfpi"]
+texture = ExtResource("4_218cn")
 
 [node name="MainMenu" type="Control" unique_id=2070220192]
 layout_mode = 3
@@ -13,9 +95,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("fantasy_theme")
 script = ExtResource("1_ct8su")
 
-[node name="background" type="TextureRect" parent="." unique_id=1541094441]
+[node name="background" type="TextureRect" parent="." unique_id=595971861]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,23 +106,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_ot3ob")
+texture = ExtResource("3_rmsp1")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="TitleArea" type="VBoxContainer" parent="." unique_id=792947005]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 56.0
+offset_left = -551.0
+offset_top = 21.0
+offset_right = 497.0
+offset_bottom = 163.0
 grow_horizontal = 2
 
 [node name="TitleLabel" type="Label" parent="TitleArea" unique_id=1702677720]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.91, 0.8, 1)
 theme_override_font_sizes/font_size = 60
 text = "Delver's Gambit"
 horizontal_alignment = 1
@@ -47,51 +130,122 @@ vertical_alignment = 1
 
 [node name="SubtitleLabel" type="Label" parent="TitleArea" unique_id=1215839630]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.96, 0.91, 0.8, 1)
 theme_override_font_sizes/font_size = 40
 text = "Build Your Deck. Choose Your Path. Defeat the Bosses."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MenuPanel" type="PanelContainer" parent="." unique_id=1677950995]
+z_index = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.345
+anchor_right = 0.405
+anchor_bottom = 0.91
+offset_left = 394.6
+offset_top = -0.2000122
+offset_right = 394.59998
+offset_bottom = -0.2000122
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ct8su")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel" unique_id=2107605320]
 layout_mode = 2
 
 [node name="NewRunButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=630188853]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.87058824, 0.6784314, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.98, 0.85, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsp1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_218cn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vp83o")
 text = "NEW RUN"
 
 [node name="ContinueButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=928587887]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.98, 0.85, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_e2awe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lb38e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7fxis")
 text = "CONTINUE RUN"
 
 [node name="CollectionButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=2116928058]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.98, 0.85, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_k15nl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ahxlq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4yyw3")
 text = "CARD COLLECTION"
 
-[node name="SettingsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1201127577]
+[node name="ShopButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=437104516]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.98, 0.85, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_bslpt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ih3s6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_53qvp")
+text = "SHOP"
+
+[node name="SettingsButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=1201127577]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.98, 0.85, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_je8l7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wnv6w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m8c1o")
 text = "SETTINGS"
 
 [node name="QuitButton" type="Button" parent="MenuPanel/VBoxContainer" unique_id=627768160]
+custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.98, 0.85, 1)
+theme_override_colors/font_hover_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_h14mx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8pvqd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_on7of")
 text = "QUIT"
+
+[node name="GoldDisplay" type="Label" parent="." unique_id=316525595]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 18.0
+offset_right = -24.0
+offset_bottom = 58.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.82, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.025, 0.01, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Gold: 0"
+horizontal_alignment = 2
 
 [node name="SettingsPanel" type="PanelContainer" parent="." unique_id=1891002051]
 visible = false
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,11 +329,20 @@ layout_mode = 2
 text = "Fullscreen"
 
 [node name="CloseButton" type="Button" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1796010092]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.8, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ikdwa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cimsg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h7hll")
 text = "CLOSE"
 
 [node name="ResetButton" type="Button" parent="SettingsPanel/Panel/MarginContainer/VBoxContainer" unique_id=1050307060]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_nnlcr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_voxdf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ucfpi")
 text = "RESET"
 
 [node name="VersionLabel" type="Label" parent="." unique_id=1326601945]
@@ -195,12 +358,15 @@ offset_right = -8.0
 offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.95, 0.83, 0.58, 1)
+theme_override_colors/font_outline_color = Color(0.04, 0.025, 0.01, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
 text = "Version 0.5"
 
 [connection signal="pressed" from="MenuPanel/VBoxContainer/NewRunButton" to="." method="_on_new_run_button_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/CollectionButton" to="." method="_on_collection_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

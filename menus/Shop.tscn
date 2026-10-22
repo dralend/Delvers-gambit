@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dg55fku7ygweu"]
+
+[ext_resource type="Script" uid="uid://c5jc4tpnn7euk" path="res://menus/shop.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="4_s2fb0"]
+[ext_resource type="Theme" uid="uid://btyopkch1fv3e" path="res://menus/fantasy_menu_theme.tres" id="fantasy_theme"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v1arc"]
+texture = ExtResource("4_s2fb0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yi6q5"]
+texture = ExtResource("4_s2fb0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pubqf"]
+texture = ExtResource("4_s2fb0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2yo2m"]
+texture = ExtResource("4_s2fb0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsmpj"]
+texture = ExtResource("4_s2fb0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8lvo"]
+texture = ExtResource("4_s2fb0")
+
+[node name="Shop" type="Control" unique_id=499450397]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("fantasy_theme")
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=41838525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.025, 0.018, 0.035, 0.38)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=2032008119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 42.0
+offset_right = -72.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=109743000]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TopRow" type="HBoxContainer" parent="Margin/VBox" unique_id=1274163973]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Margin/VBox/TopRow" unique_id=838910887]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.84, 0.48, 1)
+theme_override_font_sizes/font_size = 44
+text = "THE DELVER'S SHOP"
+
+[node name="GoldLabel" type="Label" parent="Margin/VBox/TopRow" unique_id=1088334732]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.38, 1)
+theme_override_font_sizes/font_size = 30
+text = "Gold: 0"
+
+[node name="Subtitle" type="Label" parent="Margin/VBox" unique_id=1613742112]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.9, 0.78, 1)
+theme_override_font_sizes/font_size = 18
+text = "PREPARE FOR YOUR NEXT RUN  •  Items are temporary; card unlocks are permanent."
+
+[node name="Offers" type="HBoxContainer" parent="Margin/VBox" unique_id=788264394]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="MessageLabel" type="Label" parent="Margin/VBox" unique_id=1920591669]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.38, 1)
+theme_override_font_sizes/font_size = 18
+text = "Choose an offer."
+horizontal_alignment = 1
+
+[node name="BottomRow" type="HBoxContainer" parent="Margin/VBox" unique_id=1682151798]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="RefreshButton" type="Button" parent="Margin/VBox/BottomRow" unique_id=355611726]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_v1arc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yi6q5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pubqf")
+text = "REFRESH OFFERS (5 GOLD)"
+
+[node name="BackButton" type="Button" parent="Margin/VBox/BottomRow" unique_id=829504685]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_2yo2m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xsmpj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m8lvo")
+text = "BACK TO MAIN MENU"
+
+[connection signal="pressed" from="Margin/VBox/BottomRow/RefreshButton" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="Margin/VBox/BottomRow/BackButton" to="." method="_on_back_pressed"]

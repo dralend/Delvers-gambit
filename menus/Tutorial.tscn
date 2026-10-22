@@ -1,6 +1,40 @@
 [gd_scene format=3 uid="uid://bcmvyjxh4sa8q"]
 
 [ext_resource type="Script" uid="uid://2drokumfrhwu" path="res://menus/tutorial.gd" id="1_6kkba"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="4_6b76n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sclb"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwb8a"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3md8l"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pw4c5"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krt1h"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6abno"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bur5c"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cpfp"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqity"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkgwb"]
+texture = ExtResource("4_6b76n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prv2y"]
+texture = ExtResource("4_6b76n")
 
 [node name="Tutorial" type="Control" unique_id=1420402630]
 layout_mode = 3
@@ -90,6 +124,7 @@ autowrap_mode = 3
 [node name="ExampleContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=1797503430]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
+alignment = 1
 
 [node name="TipLabel" type="Label" parent="MarginContainer/VBoxContainer/ContentPanel/ContentMargin/ContentVBox" unique_id=242978278]
 custom_minimum_size = Vector2(0, 40)
@@ -105,11 +140,20 @@ layout_mode = 2
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=749694250]
 custom_minimum_size = Vector2(120, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_6sclb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kwb8a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3md8l")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pw4c5")
 text = "BACK"
 
 [node name="SkipButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=813195391]
 custom_minimum_size = Vector2(120, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_krt1h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6abno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bur5c")
 text = "SKIP TUTORIAL"
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1693864452]
@@ -119,4 +163,9 @@ size_flags_horizontal = 3
 [node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonBar" unique_id=1566742592]
 custom_minimum_size = Vector2(120, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.68, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_0cpfp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rqity")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dkgwb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_prv2y")
 text = "NEXT"

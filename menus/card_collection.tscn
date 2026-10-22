@@ -1,6 +1,26 @@
 [gd_scene format=3 uid="uid://cq7oh1eay8xeu"]
 
 [ext_resource type="Script" uid="uid://dwx28fja7adil" path="res://menus/card_collection.gd" id="1_ytiaq"]
+[ext_resource type="Texture2D" uid="uid://bcihquu6fqx28" path="res://background/IMG_0255.png" id="4_sf0p8"]
+[ext_resource type="Theme" uid="uid://btyopkch1fv3e" path="res://menus/fantasy_menu_theme.tres" id="fantasy_theme"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0btta"]
+texture = ExtResource("4_sf0p8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_634sg"]
+texture = ExtResource("4_sf0p8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_or883"]
+texture = ExtResource("4_sf0p8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1gt5r"]
+texture = ExtResource("4_sf0p8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3jmja"]
+texture = ExtResource("4_sf0p8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4xmoc"]
+texture = ExtResource("4_sf0p8")
 
 [node name="CardCollection" type="Control" unique_id=826248865]
 layout_mode = 3
@@ -9,15 +29,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("fantasy_theme")
 script = ExtResource("1_ytiaq")
 
 [node name="Background" type="ColorRect" parent="." unique_id=347396656]
+z_index = -9
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.012, 0.009, 0.02, 0.48)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=3816476]
 layout_mode = 1
@@ -39,22 +62,33 @@ layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1515435842]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CARD COLLECTION "
+theme_override_colors/font_color = Color(1, 0.79, 0.38, 1)
+theme_override_font_sizes/font_size = 38
+text = "CARD COLLECTION"
 horizontal_alignment = 3
 
 [node name="CardCountLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=2020738130]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.91, 0.82, 0.61, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
 
 [node name="DeckBuilderButton" type="Button" parent="MarginContainer/VBoxContainer/Header" unique_id=1837006812]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 54)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_0btta")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_634sg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_or883")
 text = "BUILD DECK"
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Header" unique_id=328538369]
+custom_minimum_size = Vector2(130, 54)
 layout_mode = 2
-text = "Back"
+theme_override_styles/normal = SubResource("StyleBoxTexture_1gt5r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3jmja")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4xmoc")
+text = "BACK"
 
 [node name="Separator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1625917673]
 layout_mode = 2
@@ -70,23 +104,22 @@ custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
 columns = 4
 
 [node name="CardDetailsPanel" type="Panel" parent="." unique_id=839173306]
+visible = false
+custom_minimum_size = Vector2(280, 430)
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -377.0
-offset_top = -218.0
-offset_right = -51.0
-offset_bottom = 423.0
+offset_left = -330.0
+offset_top = 150.0
+offset_right = -30.0
+offset_bottom = 610.0
 grow_horizontal = 0
-grow_vertical = 2
 mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CardDetailsPanel" unique_id=1897737505]
@@ -94,50 +127,36 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VScrollBar" type="VScrollBar" parent="CardDetailsPanel/VBoxContainer" unique_id=952458064]
+[node name="SelectedNameLabel" type="Label" parent="CardDetailsPanel/VBoxContainer" unique_id=510114862]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.79, 0.38, 1)
+theme_override_font_sizes/font_size = 24
+text = "SELECTED CARD"
 
-[node name="SelectedNameLabel" type="Label" parent="CardDetailsPanel/VBoxContainer/VScrollBar" unique_id=510114862]
-layout_mode = 0
-offset_top = 12.0
-offset_right = 326.0
-offset_bottom = 35.0
-text = "name"
-horizontal_alignment = 1
+[node name="SelectedArtwork" type="TextureRect" parent="CardDetailsPanel/VBoxContainer" unique_id=327713064]
+custom_minimum_size = Vector2(0, 240)
+custom_maximum_size = Vector2(260, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
 
-[node name="SelectedArtwork" type="TextureRect" parent="CardDetailsPanel/VBoxContainer/VScrollBar" unique_id=327713064]
-custom_maximum_size = Vector2(160, 220)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 80.0
-offset_top = 35.0
-offset_right = 240.0
-offset_bottom = 255.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 2
+[node name="ValuesLabel" type="Label" parent="CardDetailsPanel/VBoxContainer" unique_id=2047497410]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.87, 0.63, 1)
+theme_override_font_sizes/font_size = 18
 
-[node name="ValuesLabel" type="Label" parent="CardDetailsPanel/VBoxContainer/VScrollBar" unique_id=2047497410]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 0
-offset_top = 228.0
-offset_right = 326.0
-offset_bottom = 288.0
-horizontal_alignment = 1
-
-[node name="DescriptionLabel" type="Label" parent="CardDetailsPanel/VBoxContainer/VScrollBar" unique_id=1805760475]
-layout_mode = 0
-offset_top = 326.0
-offset_right = 326.0
-offset_bottom = 349.0
-autowrap_mode = 3
+[node name="DescriptionLabel" type="Label" parent="CardDetailsPanel/VBoxContainer" unique_id=1805760475]
+layout_mode = 2
+size_flags_vertical = 3
+autowrap_mode = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Header/DeckBuilderButton" to="." method="_on_deck_builder_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Header/BackButton" to="." method="_on_back_button_pressed"]

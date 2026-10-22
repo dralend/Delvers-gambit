@@ -11,6 +11,4 @@ up = 6
 right = 4
 down = 6
 left = 5
-rare_ability = "Savage Instinct"
-rare_description = "Gain up to +2 attack based on the number of adjacent enemies."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

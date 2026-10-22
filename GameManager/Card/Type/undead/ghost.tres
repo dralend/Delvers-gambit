@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dh63jtlsomkxo"]
+
+[ext_resource type="Texture2D" uid="uid://bbvrrbh0n8dm6" path="res://GameManager/Card/Type/undead/art/zombie.png" id="1_q88t2"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_4hsqk"]
+
+[resource]
+script = ExtResource("2_4hsqk")
+card_name = "Zombie"
+artwork = ExtResource("1_q88t2")
+up = 5
+right = 4
+down = 2
+left = 5
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

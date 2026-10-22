@@ -11,6 +11,4 @@ up = 5
 right = 4
 down = 2
 left = 5
-rare_ability = "Deathless Return"
-rare_description = "Survive the first capture attempt against this card each battle."
 metadata/_custom_type_script = "uid://b20o6xviyx7dm"

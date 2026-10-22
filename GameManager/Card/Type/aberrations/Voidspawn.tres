@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dl1rbxvoe3uyp"]
+
+[ext_resource type="Texture2D" uid="uid://b7gfu5hgdrnnq" path="res://GameManager/Card/Type/aberrations/art/eyegazer.png" id="1_4nuqa"]
+[ext_resource type="Script" uid="uid://b20o6xviyx7dm" path="res://GameManager/Card/CardData.gd" id="2_ebf3q"]
+
+[resource]
+script = ExtResource("2_ebf3q")
+card_name = "EyeGaser"
+artwork = ExtResource("1_4nuqa")
+up = 7
+right = 6
+down = 5
+left = 6
+metadata/_custom_type_script = "uid://b20o6xviyx7dm"

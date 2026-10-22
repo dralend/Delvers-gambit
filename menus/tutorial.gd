@@ -48,6 +48,7 @@ var tutorial_hard_unlocked: bool = false
 @onready var next_button: Button = $MarginContainer/VBoxContainer/ButtonBar/NextButton
 
 
+
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_pressed)
 	skip_button.pressed.connect(_on_skip_pressed)
